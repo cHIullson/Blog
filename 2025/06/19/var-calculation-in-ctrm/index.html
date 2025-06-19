@@ -19,25 +19,25 @@
   <meta name="author" content="Rev Chen">
   <meta name="keywords" content="">
   
-    <meta name="description" content="梁漱溟：做学问的八个境界1928年在广州中山大学的讲演  来源：北京日报 作者：梁漱溟时间：2013年11月5日   引言在座各位，今天承中山大学哲学会请我来演讲，很荣幸。今天预备讲的题目虽然寻常，却恐有负大家的盛意。这个题目不如说是——“我如何走上做学问这条路”。 我讲这个题目有两点意义：  初次见面，想借此机会介绍自己，澄清一些对我的误会。 借此机会，把我心里认为最要紧的事讲一讲，算是对哲学系">
+    <meta name="description" content="在CTRM系统中计算VaR的介绍目录 背景 VaR简介 计算过程 数学公式 波动率计算 示例 应用场景 总结  背景在金融和大宗商品交易领域，风险控制是企业稳健运营的关键环节。随着市场波动性增加，金融机构和大型企业越来越依赖于复杂的风险管理系统（Risk Management System, RMS）来量化和管理潜在损失。 CTRM（Commodity Trading and Risk Manag">
 <meta property="og:type" content="article">
-<meta property="og:title" content="梁漱溟：做学问的八个境界">
-<meta property="og:url" content="https://www.chiullson.com/2025/05/27/p-1/index.html">
+<meta property="og:title" content="VaR 在CTRM中的应用及介绍">
+<meta property="og:url" content="https://www.chiullson.com/2025/06/19/var-calculation-in-ctrm/index.html">
 <meta property="og:site_name" content="Hi Rev">
-<meta property="og:description" content="梁漱溟：做学问的八个境界1928年在广州中山大学的讲演  来源：北京日报 作者：梁漱溟时间：2013年11月5日   引言在座各位，今天承中山大学哲学会请我来演讲，很荣幸。今天预备讲的题目虽然寻常，却恐有负大家的盛意。这个题目不如说是——“我如何走上做学问这条路”。 我讲这个题目有两点意义：  初次见面，想借此机会介绍自己，澄清一些对我的误会。 借此机会，把我心里认为最要紧的事讲一讲，算是对哲学系">
+<meta property="og:description" content="在CTRM系统中计算VaR的介绍目录 背景 VaR简介 计算过程 数学公式 波动率计算 示例 应用场景 总结  背景在金融和大宗商品交易领域，风险控制是企业稳健运营的关键环节。随着市场波动性增加，金融机构和大型企业越来越依赖于复杂的风险管理系统（Risk Management System, RMS）来量化和管理潜在损失。 CTRM（Commodity Trading and Risk Manag">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2025-05-27T14:37:00.000Z">
-<meta property="article:modified_time" content="2025-05-28T14:16:51.435Z">
+<meta property="article:published_time" content="2025-06-18T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-06-19T07:59:35.828Z">
 <meta property="article:author" content="Rev Chen">
-<meta property="article:tag" content="梁漱溟">
-<meta property="article:tag" content="学问">
+<meta property="article:tag" content="VaR">
+<meta property="article:tag" content="CTRM">
 <meta name="twitter:card" content="summary_large_image">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>梁漱溟：做学问的八个境界 - Hi Rev</title>
+  <title>VaR 在CTRM中的应用及介绍 - Hi Rev</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -214,7 +214,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="梁漱溟：做学问的八个境界"></span>
+            <span id="subtitle" data-typed-text="VaR 在CTRM中的应用及介绍"></span>
           
         </div>
 
@@ -225,8 +225,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-05-27 22:37" pubdate>
-          May 27, 2025 pm
+        <time datetime="2025-06-19 00:00" pubdate>
+          June 19, 2025 am
         </time>
       </span>
     
@@ -237,7 +237,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          806 words
+          1.7k words
         
       </span>
     
@@ -248,7 +248,7 @@
         
         
         
-          7 mins
+          15 mins
         
       </span>
     
@@ -285,57 +285,133 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">梁漱溟：做学问的八个境界</h1>
+            <h1 id="seo-header">VaR 在CTRM中的应用及介绍</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="梁漱溟：做学问的八个境界"><a href="#梁漱溟：做学问的八个境界" class="headerlink" title="梁漱溟：做学问的八个境界"></a>梁漱溟：做学问的八个境界</h1><p><em>1928年在广州中山大学的讲演</em></p>
-<blockquote>
-<p>来源：北京日报 作者：梁漱溟<br>时间：2013年11月5日</p>
-</blockquote>
-<hr>
-<h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>在座各位，今天承中山大学哲学会请我来演讲，很荣幸。今天预备讲的题目虽然寻常，却恐有负大家的盛意。这个题目不如说是——<strong>“我如何走上做学问这条路”</strong>。</p>
-<p>我讲这个题目有两点意义：</p>
-<ol>
-<li>初次见面，想借此机会介绍自己，澄清一些对我的误会。</li>
-<li>借此机会，把我心里认为最要紧的事讲一讲，算是对哲学系的一点贡献。</li>
+                <h1 id="在CTRM系统中计算VaR的介绍"><a href="#在CTRM系统中计算VaR的介绍" class="headerlink" title="在CTRM系统中计算VaR的介绍"></a>在CTRM系统中计算VaR的介绍</h1><h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ol>
+<li><a href="#%E8%83%8C%E6%99%AF">背景</a></li>
+<li><a href="#var%E7%AE%80%E4%BB%8B">VaR简介</a></li>
+<li><a href="#%E8%AE%A1%E7%AE%97%E8%BF%87%E7%A8%8B">计算过程</a></li>
+<li><a href="#%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F">数学公式</a></li>
+<li><a href="#%E6%B3%A2%E5%8A%A8%E7%8E%87%E8%AE%A1%E7%AE%97">波动率计算</a></li>
+<li><a href="#%E7%A4%BA%E4%BE%8B">示例</a></li>
+<li><a href="#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF">应用场景</a></li>
+<li><a href="#%E6%80%BB%E7%BB%93">总结</a></li>
 </ol>
-<hr>
-<h2 id="我不是学问家"><a href="#我不是学问家" class="headerlink" title="我不是学问家"></a>我不是学问家</h2><p>我根本不是学问家！不论西学还是国学，工具和根基都不具备。我只是个中学毕业生。</p>
-<p>我不是有意求学问，也不曾想过学哲学，纯属无意之中，走上了这条路。</p>
-<hr>
-<h2 id="为什么要谈哲学？"><a href="#为什么要谈哲学？" class="headerlink" title="为什么要谈哲学？"></a>为什么要谈哲学？</h2><p>我认为哲学**“尽人应学之学”，但不是“尽人可学之学”**。</p>
-<p>哲学的难点在于：</p>
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>在金融和大宗商品交易领域，风险控制是企业稳健运营的关键环节。随着市场波动性增加，金融机构和大型企业越来越依赖于复杂的风险管理系统（Risk Management System, RMS）来量化和管理潜在损失。</p>
+<p>CTRM（Commodity Trading and Risk Management）系统是一种专门用于管理和控制商品交易及相关风险的企业级解决方案。VaR（Value at Risk，风险价值）是衡量金融资产或投资组合在未来特定时间区间内可能遭受的最大损失的一种常用指标，广泛应用于市场风险管理中。</p>
+<p>本文将介绍如何在CTRM系统中实现VaR的计算，并提供相关的数学公式与实际示例。</p>
+<h2 id="VaR简介"><a href="#VaR简介" class="headerlink" title="VaR简介"></a>VaR简介</h2><p>VaR 是一种统计技术，用于估计和量化在一定置信水平下，某一金融资产或投资组合在未来特定时间段内的最大潜在损失。例如，一个95%置信水平下的1天VaR为$100万意味着：在正常市场条件下，有95%的概率该投资组合在接下来的一天内的损失不会超过$100万。</p>
+<p>VaR 的优点在于其简洁性和直观性，使得管理层可以快速理解并采取相应的风险对冲措施。</p>
+<h2 id="计算过程"><a href="#计算过程" class="headerlink" title="计算过程"></a>计算过程</h2><p>在 CTRM 系统中，VaR 的计算通常包括以下几个步骤：</p>
+<ol>
+<li><strong>数据准备</strong>：收集历史价格、交易头寸、市场因子等数据。</li>
+<li><strong>收益率计算</strong>：根据历史价格数据计算资产或投资组合的历史收益率。</li>
+<li><strong>选择置信水平</strong>：通常使用 95% 或 99% 的置信水平。</li>
+<li><strong>选择计算方法</strong>：常用的 VaR 方法包括方差-协方差法、历史模拟法和蒙特卡罗模拟法。</li>
+<li><strong>执行计算</strong>：根据所选方法计算 VaR 值。</li>
+<li><strong>结果分析</strong>：评估 VaR 指标是否符合企业风险容忍度，并做出相应决策。</li>
+</ol>
+<h3 id="方差-协方差法（Variance-Covariance-Method）"><a href="#方差-协方差法（Variance-Covariance-Method）" class="headerlink" title="方差-协方差法（Variance-Covariance Method）"></a>方差-协方差法（Variance-Covariance Method）</h3><p>这种方法假设资产收益率服从正态分布，通过计算投资组合的波动率和相关性矩阵来估算 VaR。</p>
+<h3 id="历史模拟法（Historical-Simulation）"><a href="#历史模拟法（Historical-Simulation）" class="headerlink" title="历史模拟法（Historical Simulation）"></a>历史模拟法（Historical Simulation）</h3><p>该方法直接使用历史数据来模拟未来可能的价格变动，并基于这些模拟值计算 VaR。</p>
+<h3 id="蒙特卡罗模拟法（Monte-Carlo-Simulation）"><a href="#蒙特卡罗模拟法（Monte-Carlo-Simulation）" class="headerlink" title="蒙特卡罗模拟法（Monte Carlo Simulation）"></a>蒙特卡罗模拟法（Monte Carlo Simulation）</h3><p>通过随机抽样和概率模型模拟大量可能的市场情景，从而估算 VaR。</p>
+<h2 id="数学公式"><a href="#数学公式" class="headerlink" title="数学公式"></a>数学公式</h2><h3 id="方差-协方差法的-VaR-公式"><a href="#方差-协方差法的-VaR-公式" class="headerlink" title="方差-协方差法的 VaR 公式"></a>方差-协方差法的 VaR 公式</h3><p>对于一个单一资产的投资组合，VaR 可以表示为：</p>
 <ul>
-<li><strong>普遍而特殊</strong>：人人都接触，但非人人能解。</li>
-<li><strong>深远而当下</strong>：问题极深，却近在眼前。</li>
-<li><strong>非积累能成</strong>：不是勤奋就行，而需天赋。</li>
+<li><strong>公式</strong>：$\text{VaR} &#x3D; Z_{\alpha} \times \sigma \times \sqrt{T} \times V$</li>
 </ul>
-<hr>
-<h2 id="我走的这条“学问路”"><a href="#我走的这条“学问路”" class="headerlink" title="我走的这条“学问路”"></a>我走的这条“学问路”</h2><p>下面我就来说明，我如何在无意中走上一条“做学问”的道路，这条路大致分为 <strong>八个层次</strong>：</p>
-<hr>
-<h3 id="一、因为肯用心思，所以有主见"><a href="#一、因为肯用心思，所以有主见" class="headerlink" title="一、因为肯用心思，所以有主见"></a>一、因为肯用心思，所以有主见</h3><blockquote>
-<p>“哲学上的外行，总不是极端派。” —— 詹姆士</p>
-</blockquote>
-<p>肯用心思，就会形成判断。即便浅薄，也是<strong>自己的判断</strong>。</p>
-<hr>
-<h3 id="二、有主见，才知道旁人的不同"><a href="#二、有主见，才知道旁人的不同" class="headerlink" title="二、有主见，才知道旁人的不同"></a>二、有主见，才知道旁人的不同</h3><p>主见一有，就会意识到与他人的不同，引发思考，激发问题。这才是学问的开端。</p>
-<hr>
-<h3 id="三、此后看书听话方能得益"><a href="#三、此后看书听话方能得益" class="headerlink" title="三、此后看书听话方能得益"></a>三、此后看书听话方能得益</h3><p>有了主见与问题，再看前人的话，才能<strong>不放过不同之处</strong>，不断吸收、融会贯通。此时才算真正开始“会读书”。</p>
-<hr>
-<h3 id="四、学然后知不足"><a href="#四、学然后知不足" class="headerlink" title="四、学然后知不足"></a>四、学然后知不足</h3><p>问题多了、用心久了，就会发现<strong>自己的肤浅</strong>，并生出真正的<strong>虚心</strong>。这是学问进境的关键。</p>
-<hr>
-<h3 id="五、由浅入深，便能以简御繁"><a href="#五、由浅入深，便能以简御繁" class="headerlink" title="五、由浅入深，便能以简御繁"></a>五、由浅入深，便能以简御繁</h3><p>当心中建立了系统，就能<strong>以一两句话统摄全局</strong>。真正的学问家，总是言简意赅、举重若轻。</p>
-<hr>
-<h3 id="六、真学问能使人有“受用”"><a href="#六、真学问能使人有“受用”" class="headerlink" title="六、真学问能使人有“受用”"></a>六、真学问能使人有“受用”</h3><p>学问能解决心中问题，才能成为<strong>自己可以运用</strong>的学问。否则即使读得再多也只是“表演”。</p>
-<hr>
-<h3 id="七、旁人得失长短，一望而知"><a href="#七、旁人得失长短，一望而知" class="headerlink" title="七、旁人得失长短，一望而知"></a>七、旁人得失长短，一望而知</h3><p>自己经历过、翻滚过，就能一望而知别人的深浅高低。这是从真实经验中得来的判断力。</p>
-<hr>
-<h3 id="八、自己说出的话精巧透辟"><a href="#八、自己说出的话精巧透辟" class="headerlink" title="八、自己说出的话精巧透辟"></a>八、自己说出的话精巧透辟</h3><p>到此地步，每一句话都<strong>晶亮透辟、思精理熟</strong>，因为心中已经没有模糊的地方了。</p>
-<hr>
-<h2 id="总结：我不是学问人，我是“问题中人”"><a href="#总结：我不是学问人，我是“问题中人”" class="headerlink" title="总结：我不是学问人，我是“问题中人”"></a>总结：我不是学问人，我是“问题中人”</h2><p>这八个境界，不是我刻意为之，而是无意中走上了这条“被问题牵着走”的路。</p>
-<p>前四层是我真实走过的，后四层只是“庶几望见”。我始终不是学问人，也不是事功人，我大概是一个——<strong>“问题中人”</strong>。</p>
+<p>其中：</p>
+<ul>
+<li>$ Z_{\alpha} $：标准正态分布下对应于置信水平 $ \alpha $ 的分位数（如 95% 置信水平对应的 $ Z_{0.95} \approx 1.645 $）</li>
+<li>$ \sigma $：资产的波动率（标准差）</li>
+<li>$ T $：持有期（通常为 1 天）</li>
+<li>$ V $：投资组合的价值</li>
+</ul>
+<p>对于多资产投资组合，需要考虑资产之间的相关性，公式变为：</p>
+<ul>
+<li><strong>公式</strong>：$\text{VaR} &#x3D; Z_{\alpha} \times \sqrt{\mathbf{w}^\top \Sigma \mathbf{w}} \times \sqrt{T} \times V$</li>
+</ul>
+<p>其中：</p>
+<ul>
+<li>$ \mathbf{w} $：各资产权重向量</li>
+<li>$ \Sigma $：资产收益率的协方差矩阵</li>
+</ul>
+<h2 id="波动率计算"><a href="#波动率计算" class="headerlink" title="波动率计算"></a>波动率计算</h2><p>波动率（Volatility）通常用收益率的标准差来衡量。计算波动率的过程如下：</p>
+<h3 id="步骤-1：获取历史价格数据"><a href="#步骤-1：获取历史价格数据" class="headerlink" title="步骤 1：获取历史价格数据"></a>步骤 1：获取历史价格数据</h3><p>假设我们有过去 n 天的收盘价数据：</p>
+<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs gams"><span class="hljs-function"><span class="hljs-title">P_1</span></span>, P_2, ..., P_n<br></code></pre></td></tr></table></figure>
+
+<h3 id="步骤-2：计算每日收益率"><a href="#步骤-2：计算每日收益率" class="headerlink" title="步骤 2：计算每日收益率"></a>步骤 2：计算每日收益率</h3><p>使用对数收益率公式进行计算：</p>
+<p>$$<br>R_i &#x3D; \ln\left(\frac{P_i}{P_{i-1}}\right)<br>$$</p>
+<p>其中 $ R_i $ 表示第 i 天的对数收益率。</p>
+<h3 id="步骤-3：计算平均收益率"><a href="#步骤-3：计算平均收益率" class="headerlink" title="步骤 3：计算平均收益率"></a>步骤 3：计算平均收益率</h3><p>$$<br>\bar{R} &#x3D; \frac{1}{n} \sum_{i&#x3D;1}^{n} R_i<br>$$</p>
+<h3 id="步骤-4：计算收益率标准差（波动率）"><a href="#步骤-4：计算收益率标准差（波动率）" class="headerlink" title="步骤 4：计算收益率标准差（波动率）"></a>步骤 4：计算收益率标准差（波动率）</h3><p>$$<br>\sigma &#x3D; \sqrt{\frac{1}{n-1} \sum_{i&#x3D;1}^{n} (R_i - \bar{R})^2}<br>$$</p>
+<p>该标准差即为资产的日波动率。如果要计算 T 天的波动率，则可乘以 $ \sqrt{T} $：</p>
+<p>$$<br>\sigma_T &#x3D; \sigma \times \sqrt{T}<br>$$</p>
+<h3 id="示例：波动率计算"><a href="#示例：波动率计算" class="headerlink" title="示例：波动率计算"></a>示例：波动率计算</h3><p>假设某资产过去 5 天的收盘价如下：</p>
+<table>
+<thead>
+<tr>
+<th>日期</th>
+<th>收盘价（P）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Day 1</td>
+<td>100</td>
+</tr>
+<tr>
+<td>Day 2</td>
+<td>102</td>
+</tr>
+<tr>
+<td>Day 3</td>
+<td>101</td>
+</tr>
+<tr>
+<td>Day 4</td>
+<td>105</td>
+</tr>
+<tr>
+<td>Day 5</td>
+<td>103</td>
+</tr>
+</tbody></table>
+<h4 id="第一步：计算对数收益率"><a href="#第一步：计算对数收益率" class="headerlink" title="第一步：计算对数收益率"></a>第一步：计算对数收益率</h4><ul>
+<li>Day 2: $ \ln(102&#x2F;100) &#x3D; 0.0198 $</li>
+<li>Day 3: $ \ln(101&#x2F;102) &#x3D; -0.0099 $</li>
+<li>Day 4: $ \ln(105&#x2F;101) &#x3D; 0.0392 $</li>
+<li>Day 5: $ \ln(103&#x2F;105) &#x3D; -0.0190 $</li>
+</ul>
+<h4 id="第二步：计算平均收益率"><a href="#第二步：计算平均收益率" class="headerlink" title="第二步：计算平均收益率"></a>第二步：计算平均收益率</h4><p>$$<br>\bar{R} &#x3D; \frac{0.0198 + (-0.0099) + 0.0392 + (-0.0190)}{4} &#x3D; 0.007525<br>$$</p>
+<h4 id="第三步：计算标准差"><a href="#第三步：计算标准差" class="headerlink" title="第三步：计算标准差"></a>第三步：计算标准差</h4><p>$$<br>\sigma &#x3D; \sqrt{\frac{(0.0198 - 0.007525)^2 + (-0.0099 - 0.007525)^2 + (0.0392 - 0.007525)^2 + (-0.0190 - 0.007525)^2}{3}} &#x3D; 0.0207<br>$$</p>
+<p>因此，该资产的日波动率为 <strong>2.07%</strong>。</p>
+<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><h3 id="示例-1：方差-协方差法"><a href="#示例-1：方差-协方差法" class="headerlink" title="示例 1：方差-协方差法"></a>示例 1：方差-协方差法</h3><p>假设某公司持有一个价值为 $1,000,000 的股票投资组合，已知该股票的日波动率为 2%，置信水平为 95%，持有期为 1 天。</p>
+<h4 id="输入参数："><a href="#输入参数：" class="headerlink" title="输入参数："></a>输入参数：</h4><ul>
+<li>投资组合价值 $ V &#x3D; 1,000,000 $</li>
+<li>波动率 $ \sigma &#x3D; 0.02 $</li>
+<li>置信水平 $ \alpha &#x3D; 0.95 $，查表得 $ Z_{0.95} &#x3D; 1.645 $</li>
+<li>持有期 $ T &#x3D; 1 $</li>
+</ul>
+<h4 id="VaR-计算："><a href="#VaR-计算：" class="headerlink" title="VaR 计算："></a>VaR 计算：</h4><p>$$<br>\text{VaR} &#x3D; 1.645 \times 0.02 \times \sqrt{1} \times 1,000,000 &#x3D; 32,900<br>$$</p>
+<p>这意味着，在 95% 的置信水平下，该投资组合在 1 天内的最大潜在损失不超过 $32,900。</p>
+<h3 id="示例-2：历史模拟法"><a href="#示例-2：历史模拟法" class="headerlink" title="示例 2：历史模拟法"></a>示例 2：历史模拟法</h3><p>假设我们有过去 100 天的收益率数据如下（单位：%）：</p>
+<figure class="highlight subunit"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs subunit"><span class="hljs-string">-1</span>.2, <span class="hljs-string">-0</span>.8, <span class="hljs-string">-1</span>.5, <span class="hljs-string">-0</span>.5, <span class="hljs-string">-0</span>.3, ..., 0.4, 0.6, 0.9<br></code></pre></td></tr></table></figure>
+
+<p>我们将这些收益率按升序排列，并找到第 5 个最小的收益率（因为 95% 置信水平意味着前 5% 最坏情况），假设为 -2.1%。</p>
+<p>如果当前投资组合价值为 $1,000,000，则 VaR 为：</p>
+<p>$$<br>\text{VaR} &#x3D; 1,000,000 \times 0.021 &#x3D; 21,000<br>$$</p>
+<p>这表明，在 95% 的置信水平下，该投资组合在 1 天内的最大潜在损失为 $21,000。</p>
+<h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2><p>VaR 广泛应用于 CTRM 系统中的以下场景：</p>
+<ol>
+<li><strong>市场风险监控</strong>：实时监控商品价格波动对投资组合的影响。</li>
+<li><strong>交易限额设定</strong>：根据 VaR 指标设定交易员的风险限额。</li>
+<li><strong>压力测试</strong>：模拟极端市场条件下的潜在损失。</li>
+<li><strong>合规报告</strong>：满足监管机构对风险披露的要求。</li>
+<li><strong>对冲策略制定</strong>：帮助制定合适的对冲策略以降低风险敞口。</li>
+</ol>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>在 CTRM 系统中引入 VaR 指标，有助于企业更好地理解和管理市场风险。通过合理的 VaR 计算方法（如方差-协方差法、历史模拟法或蒙特卡罗模拟法），企业可以在面对不确定性时做出更明智的决策。</p>
+<p>如果您需要进一步了解如何在 CTRM 系统中实现 VaR 的自动化计算或扩展更多功能，请随时告诉我！</p>
 
                 
               </div>
@@ -354,7 +430,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E5%AD%A6%E9%97%AE/" class="category-chain-item">学问</a>
+  <a href="/categories/CTRM/" class="category-chain-item">CTRM</a>
   
   
 
@@ -369,9 +445,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E6%A2%81%E6%BC%B1%E6%BA%9F/" class="print-no-link">#梁漱溟</a>
+        <a href="/tags/VaR/" class="print-no-link">#VaR</a>
       
-        <a href="/tags/%E5%AD%A6%E9%97%AE/" class="print-no-link">#学问</a>
+        <a href="/tags/CTRM/" class="print-no-link">#CTRM</a>
       
     </div>
   
@@ -383,8 +459,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>梁漱溟：做学问的八个境界</div>
-      <div>https://www.chiullson.com/2025/05/27/p-1/</div>
+      <div>VaR 在CTRM中的应用及介绍</div>
+      <div>https://www.chiullson.com/2025/06/19/var-calculation-in-ctrm/</div>
     </div>
     <div class="license-meta">
       
@@ -396,7 +472,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>May 27, 2025</div>
+          <div>June 19, 2025</div>
         </div>
       
       
@@ -428,15 +504,21 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/06/19/var-calculation-in-ctrm/" title="VaR 在CTRM中的应用及介绍">
+                      <a href="/2025/06/19/thrift-protocol.en/" title="Thrift Protocol Documentation">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">VaR 在CTRM中的应用及介绍</span>
+                        <span class="hidden-mobile">Thrift Protocol Documentation</span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     
                   </article>
                   <article class="post-next col-6">
                     
+                    
+                      <a href="/2025/05/27/p-1/" title="梁漱溟：做学问的八个境界">
+                        <span class="hidden-mobile">梁漱溟：做学问的八个境界</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </article>
                 </div>

@@ -19,11 +19,15 @@
   <meta name="author" content="Rev Chen">
   <meta name="keywords" content="">
   
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Archives">
-<meta property="og:url" content="https://www.chiullson.com/archives/2025/05/index.html">
+    <meta name="description" content="Thrift 协议解析文档目录 简介 协议结构 数据类型 服务定义 示例  简介Thrift 是一种可扩展的跨语言服务开发框架，它结合了功能强大的代码生成引擎，能够构建高效、可靠且无缝兼容的服务。Thrift 支持多种编程语言，包括 C++, Java, Python, PHP, Ruby, Erlang, Perl, Haskell, C#, Cocoa, JavaScript, Node.js">
+<meta property="og:type" content="website">
+<meta property="og:title" content="page.title">
+<meta property="og:url" content="https://www.chiullson.com/thrift-protocol.html">
 <meta property="og:site_name" content="Hi Rev">
+<meta property="og:description" content="Thrift 协议解析文档目录 简介 协议结构 数据类型 服务定义 示例  简介Thrift 是一种可扩展的跨语言服务开发框架，它结合了功能强大的代码生成引擎，能够构建高效、可靠且无缝兼容的服务。Thrift 支持多种编程语言，包括 C++, Java, Python, PHP, Ruby, Erlang, Perl, Haskell, C#, Cocoa, JavaScript, Node.js">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-06-19T07:54:26.441Z">
+<meta property="article:modified_time" content="2025-06-19T07:54:26.441Z">
 <meta property="article:author" content="Rev Chen">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -31,7 +35,7 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>Archives - Hi Rev</title>
+  <title>page.title - Hi Rev</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -196,13 +200,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+     style="background: url('/img/timg.jpeg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Archives"></span>
+            <span id="subtitle" data-typed-text="page.title"></span>
           
         </div>
 
@@ -229,23 +233,61 @@
               <div class="col-12 col-md-10 m-auto">
                 
 
-<div class="list-group">
-  <p class="h4">4 posts in total</p>
-  <hr>
-  
-  
-    
-      
-      <p class="h5">2025</p>
-    
-    <a href="/2025/05/27/p-1/" class="list-group-item list-group-item-action">
-      <time>05-27</time>
-      <div class="list-group-item-title">梁漱溟：做学问的八个境界</div>
-    </a>
-  
-</div>
+<article class="page-content">
+  <h1 id="Thrift-协议解析文档"><a href="#Thrift-协议解析文档" class="headerlink" title="Thrift 协议解析文档"></a>Thrift 协议解析文档</h1><h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ol>
+<li><a href="#%E7%AE%80%E4%BB%8B">简介</a></li>
+<li><a href="#%E5%8D%8F%E8%AE%AE%E7%BB%93%E6%9E%84">协议结构</a></li>
+<li><a href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B">数据类型</a></li>
+<li><a href="#%E6%9C%8D%E5%8A%A1%E5%AE%9A%E4%B9%89">服务定义</a></li>
+<li><a href="#%E7%A4%BA%E4%BE%8B">示例</a></li>
+</ol>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Thrift 是一种可扩展的跨语言服务开发框架，它结合了功能强大的代码生成引擎，能够构建高效、可靠且无缝兼容的服务。Thrift 支持多种编程语言，包括 C++, Java, Python, PHP, Ruby, Erlang, Perl, Haskell, C#, Cocoa, JavaScript, Node.js 等。</p>
+<h2 id="协议结构"><a href="#协议结构" class="headerlink" title="协议结构"></a>协议结构</h2><p>Thrift 协议由多个部分组成，主要包括：</p>
+<ul>
+<li><strong>命名空间</strong>（Namespace）: 用于组织代码的逻辑分组。</li>
+<li><strong>数据结构</strong>（Data Structures）: 定义服务间通信的数据格式。</li>
+<li><strong>服务接口</strong>（Service Interface）: 定义远程过程调用（RPC）的方法签名。</li>
+</ul>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p>Thrift 支持以下基本数据类型：</p>
+<ul>
+<li><code>bool</code>: 布尔值</li>
+<li><code>byte</code>: 8位有符号整数</li>
+<li><code>i16</code>: 16位有符号整数</li>
+<li><code>i32</code>: 32位有符号整数</li>
+<li><code>i64</code>: 64位有符号整数</li>
+<li><code>double</code>: 64位浮点数</li>
+<li><code>string</code>: UTF-8 编码的字符串</li>
+</ul>
+<p>此外，Thrift 还支持复杂数据类型：</p>
+<ul>
+<li><strong>struct</strong>: 结构体，类似于 C 语言中的 struct。</li>
+<li><strong>union</strong>: 联合体，类似于 C 语言中的 union。</li>
+<li><strong>enum</strong>: 枚举，表示一组命名的整数常量。</li>
+<li><strong>list</strong>: 有序的元素集合。</li>
+<li>**set&#96;: 无序的唯一元素集合。</li>
+<li><strong>map</strong>: 键值对的集合。</li>
+</ul>
+<h2 id="服务定义"><a href="#服务定义" class="headerlink" title="服务定义"></a>服务定义</h2><p>Thrift 允许您定义服务接口，这些接口可以被客户端调用。服务接口定义如下：</p>
+<figure class="highlight thrift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs thrift"><span class="hljs-class"><span class="hljs-keyword">service</span> <span class="hljs-title">MyService</span> </span>&#123;<br>  <span class="hljs-type">string</span> sayHello(<span class="hljs-number">1</span>: <span class="hljs-type">string</span> name)<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><p>下面是一个完整的 Thrift IDL 文件示例：</p>
+<pre><code class="language-thrift">namespace cpp example
+
+struct Person &#123;
+  1: i32 id,
+  2: string name,
+  3: i16 age
+&#125;
+
+service PersonService &#123;
+  Person getPerson(1: i32 id)
+&#125;
+</code></pre>
 
 
+  
+
+</article>
 
 
 
