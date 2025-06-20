@@ -27,7 +27,7 @@
 <meta property="og:description" content="在CTRM系统中计算VaR的介绍目录 背景 VaR简介 计算过程 数学公式 波动率计算 示例 应用场景 总结  背景在金融和大宗商品交易领域，风险控制是企业稳健运营的关键环节。随着市场波动性增加，金融机构和大型企业越来越依赖于复杂的风险管理系统（Risk Management System, RMS）来量化和管理潜在损失。 CTRM（Commodity Trading and Risk Manag">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-06-18T16:00:00.000Z">
-<meta property="article:modified_time" content="2025-06-19T13:45:51.663Z">
+<meta property="article:modified_time" content="2025-06-20T02:00:32.164Z">
 <meta property="article:author" content="Rev Chen">
 <meta property="article:tag" content="VaR">
 <meta property="article:tag" content="CTRM">
@@ -384,7 +384,7 @@
 <li>Day 5: $ \ln(103&#x2F;105) &#x3D; -0.0190 $</li>
 </ul>
 <h4 id="第二步：计算平均收益率"><a href="#第二步：计算平均收益率" class="headerlink" title="第二步：计算平均收益率"></a>第二步：计算平均收益率</h4><p>$$<br>\bar{R} &#x3D; \frac{0.0198 + (-0.0099) + 0.0392 + (-0.0190)}{4} &#x3D; 0.007525<br>$$</p>
-<h4 id="第三步：计算标准差"><a href="#第三步：计算标准差" class="headerlink" title="第三步：计算标准差"></a>第三步：计算标准差</h4><p>$$<br>\sigma &#x3D; \sqrt{\frac{(0.0198 - 0.007525)^2 + (-0.0099 - 0.007525)^2 + (0.0392 - 0.007525)^2 + (-0.0190 - 0.007525)^2}{3}} &#x3D; 0.0207<br>$$</p>
+<h4 id="第三步：计算标准差"><a href="#第三步：计算标准差" class="headerlink" title="第三步：计算标准差"></a>第三步：计算标准差</h4><p>$$<br>\sigma &#x3D; \sqrt{\frac{(0.0198 - 0.007525)^2 + (-0.0099 - 0.007525)^2 + (0.0392 - 0.007525)^2 + (-0.0190 - 0.007525)^2}{4}} &#x3D; 0.0207<br>$$</p>
 <p>因此，该资产的日波动率为 <strong>2.07%</strong>。</p>
 <h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><h3 id="示例-1：方差-协方差法"><a href="#示例-1：方差-协方差法" class="headerlink" title="示例 1：方差-协方差法"></a>示例 1：方差-协方差法</h3><p>假设某公司持有一个价值为 $1,000,000 的股票投资组合，已知该股票的日波动率为 2%，置信水平为 95%，持有期为 1 天。</p>
 <h4 id="输入参数："><a href="#输入参数：" class="headerlink" title="输入参数："></a>输入参数：</h4><ul>
