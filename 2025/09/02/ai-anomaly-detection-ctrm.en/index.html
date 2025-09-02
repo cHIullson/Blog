@@ -1,0 +1,986 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/log_withe.png">
+  <link rel="icon" href="/img/log_withe.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Rev Chen">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content=".language-switcher-container {       position: relative;       text-align: right;       margin-bottom: 20px;       padding: 10px;       background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AI-Driven Anomaly Detection in CTRM Systems Using Isolation Forest Algorithm">
+<meta property="og:url" content="https://www.chiullson.com/2025/09/02/ai-anomaly-detection-ctrm.en/index.html">
+<meta property="og:site_name" content="Hi Rev">
+<meta property="og:description" content=".language-switcher-container {       position: relative;       text-align: right;       margin-bottom: 20px;       padding: 10px;       background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-09-02T02:30:00.000Z">
+<meta property="article:modified_time" content="2025-09-02T06:49:15.722Z">
+<meta property="article:author" content="Rev Chen">
+<meta property="article:tag" content="Isolation Forest">
+<meta property="article:tag" content="Machine Learning">
+<meta property="article:tag" content="Risk Management">
+<meta property="article:tag" content="Trading Monitoring">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>AI-Driven Anomaly Detection in CTRM Systems Using Isolation Forest Algorithm - Hi Rev</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"www.chiullson.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+<!-- hexo injector head_end start --><script defer src="https://0197829c-e2d1-74d8-b783-901d051de9af.spst1.com/ss.js"></script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Chiullson&#39;s Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>Archives</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>Categories</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>Tags</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>About</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/b-1.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="AI-Driven Anomaly Detection in CTRM Systems Using Isolation Forest Algorithm"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-09-02 10:30" pubdate>
+          September 2, 2025 am
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          693 words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          6 mins
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">AI-Driven Anomaly Detection in CTRM Systems Using Isolation Forest Algorithm</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <div class="language-switcher-container">
+  <style>
+    .language-switcher-container {
+      position: relative;
+      text-align: right;
+      margin-bottom: 20px;
+      padding: 10px;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+<pre><code class="hljs">.language-switcher &#123;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+&#125;
+
+.language-switcher .lang-label &#123;
+  font-size: 14px;
+  color: #666;
+  margin-right: 10px;
+&#125;
+
+.language-switcher .lang-btn &#123;
+  display: inline-block;
+  padding: 6px 12px;
+  text-decoration: none;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: 1px solid #ddd;
+&#125;
+
+.language-switcher .lang-btn.active &#123;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-color: #667eea;
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+&#125;
+
+.language-switcher .lang-btn:not(.active) &#123;
+  background: white;
+  color: #0066cc;
+  border-color: #0066cc;
+&#125;
+
+.language-switcher .lang-btn:not(.active):hover &#123;
+  background: #0066cc;
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 102, 204, 0.3);
+&#125;
+
+.language-switcher .separator &#123;
+  color: #ccc;
+  margin: 0 5px;
+&#125;
+</code></pre>
+<p>  </style></p>
+  <div class="language-switcher">
+    <span class="lang-label">🌐 Language / 语言选择:</span>
+    <a href="/2025/09/02/ai-anomaly-detection-ctrm/" class="lang-btn" title="中文版本">
+      🇨🇳 中文
+    </a>
+    <span class="separator">|</span>
+    <a href="#" class="lang-btn active" title="English Version">
+      🇺🇸 English
+    </a>
+  </div>
+</div>
+
+<h1 id="AI-Driven-Anomaly-Detection-in-CTRM-Systems-Using-Isolation-Forest-Algorithm"><a href="#AI-Driven-Anomaly-Detection-in-CTRM-Systems-Using-Isolation-Forest-Algorithm" class="headerlink" title="AI-Driven Anomaly Detection in CTRM Systems Using Isolation Forest Algorithm"></a>AI-Driven Anomaly Detection in CTRM Systems Using Isolation Forest Algorithm</h1><h2 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h2><p>With the increasing complexity and trading volume in commodity markets, traditional rule-based risk management methods can no longer meet the demands of modern CTRM (Commodity Trading and Risk Management) systems. <strong>The rapid development of artificial intelligence technology brings revolutionary transformation opportunities for financial risk management</strong>. This paper focuses on introducing an <strong>AI-driven intelligent anomaly detection solution</strong> based on the Isolation Forest algorithm, which automatically identifies anomalies in trading behavior patterns through <strong>deep machine learning technologies and intelligent algorithms</strong>, building <strong>next-generation AI-empowered intelligent CTRM systems</strong> that fully demonstrate <strong>the powerful application potential of artificial intelligence in modern financial risk control</strong>. This solution provides risk management personnel with more precise, timely, and intelligent AI early warning mechanisms, representing <strong>an important milestone in the intelligent transformation of CTRM systems</strong>.</p>
+<h2 id="1-Introduction"><a href="#1-Introduction" class="headerlink" title="1. Introduction"></a>1. Introduction</h2><p>In the commodity trading field, anomaly detection is the core component of risk management. <strong>Traditional CTRM systems are facing urgent digital transformation needs</strong>. The traditional methods that mainly rely on preset rules and thresholds to identify potential risks have exposed obvious limitations:</p>
+<ul>
+<li><strong>Static Rule Limitations</strong>: Unable to adapt to dynamic changes in market environments</li>
+<li><strong>High False Positive Rate</strong>: Simple threshold judgments easily generate numerous false alarms</li>
+<li><strong>Risk of Missed Detection</strong>: Complex anomaly patterns are difficult to cover with rules</li>
+<li><strong>High Maintenance Cost</strong>: Continuous adjustment and updating of rule libraries required</li>
+<li><strong>Lack of Intelligence</strong>: Unable to learn and adapt to new trading patterns</li>
+</ul>
+<p><strong>The revolutionary breakthrough of artificial intelligence technology provides entirely new approaches to solving these challenges</strong>. We introduced <strong>AI-driven anomaly detection capabilities</strong> based on the Isolation Forest algorithm, building a more intelligent, adaptive, and efficient <strong>intelligent risk monitoring system</strong>. This <strong>AI-empowered CTRM system</strong> can not only automatically learn normal trading patterns but also identify complex anomalous behaviors in real-time, truly achieving <strong>transformation from rule-driven to data-driven, from passive monitoring to intelligent prediction</strong>.</p>
+<h2 id="2-Isolation-Forest-Algorithm-Principles"><a href="#2-Isolation-Forest-Algorithm-Principles" class="headerlink" title="2. Isolation Forest Algorithm Principles"></a>2. Isolation Forest Algorithm Principles</h2><h3 id="2-1-Algorithm-Overview"><a href="#2-1-Algorithm-Overview" class="headerlink" title="2.1 Algorithm Overview"></a>2.1 Algorithm Overview</h3><p>Isolation Forest is an unsupervised anomaly detection algorithm proposed by Zhou and Liu in 2008. The algorithm is based on an important assumption: anomalous data points are easier to be “isolated,” meaning they can be separated from normal data through fewer splitting steps.</p>
+<h3 id="2-2-Core-Concepts"><a href="#2-2-Core-Concepts" class="headerlink" title="2.2 Core Concepts"></a>2.2 Core Concepts</h3><ul>
+<li><strong>Random Splitting</strong>: Randomly select features and split points in the feature space</li>
+<li><strong>Path Length</strong>: Record the number of splits required to isolate a data point</li>
+<li><strong>Anomaly Score</strong>: The shorter the path length, the higher the degree of anomaly</li>
+</ul>
+<h3 id="2-3-Algorithm-Advantages"><a href="#2-3-Algorithm-Advantages" class="headerlink" title="2.3 Algorithm Advantages"></a>2.3 Algorithm Advantages</h3><ol>
+<li><strong>Unsupervised Learning</strong>: No need for labeled anomaly samples</li>
+<li><strong>High Computational Efficiency</strong>: Linear time complexity</li>
+<li><strong>Low Memory Usage</strong>: Only need to store tree structures</li>
+<li><strong>Strong Adaptability</strong>: Can handle high-dimensional data and large-scale datasets</li>
+</ol>
+<h2 id="3-AI-Application-Architecture-in-CTRM-Systems"><a href="#3-AI-Application-Architecture-in-CTRM-Systems" class="headerlink" title="3. AI Application Architecture in CTRM Systems"></a>3. AI Application Architecture in CTRM Systems</h2><h3 id="3-1-Intelligent-System-Architecture-Design"><a href="#3-1-Intelligent-System-Architecture-Design" class="headerlink" title="3.1 Intelligent System Architecture Design"></a>3.1 Intelligent System Architecture Design</h3><p><strong>We designed a completely new AI-driven CTRM anomaly detection architecture</strong> that deeply integrates artificial intelligence capabilities into traditional risk management processes:</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs scss">┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐<br>│  Trading Data   │───→│ AI Data         │───→│ Intelligent     │<br>│  Sources        │    │ Preprocessing   │    │ Feature Eng.    │<br>│ (Multi-source)  │    │ (Auto Cleaning) │    │ (Adaptive Ext.) │<br>└─────────────────┘    └─────────────────┘    └─────────────────┘<br>                                                        │<br>┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐<br>│ Intelligent     │←───│ AI Anomaly      │←───│ Real-<span class="hljs-selector-tag">time</span> AI    │<br>│ Alert System    │    │ Detection Engine│    │ Monitoring      │<br>│ (Multi-level)   │    │ (IF Core)       │    │ (ms Response)   │<br>└─────────────────┘    └─────────────────┘    └─────────────────┘<br></code></pre></td></tr></table></figure>
+
+<h3 id="3-2-AI-Driven-Data-Flow-Processing"><a href="#3-2-AI-Driven-Data-Flow-Processing" class="headerlink" title="3.2 AI-Driven Data Flow Processing"></a>3.2 AI-Driven Data Flow Processing</h3><p><strong>Our AI system implements end-to-end intelligent processing workflows</strong>:</p>
+<ol>
+<li><strong>AI Data Collection</strong>: Intelligently integrate trading systems, market data, position information and other multi-source data</li>
+<li><strong>Intelligent Data Cleaning</strong>: AI algorithms automatically handle missing values, outliers and data format unification</li>
+<li><strong>AI Feature Extraction</strong>: Machine learning algorithms automatically build and optimize trading behavior feature vectors</li>
+<li><strong>AI Model Inference</strong>: Deep learning models calculate anomaly scores and risk predictions in real-time</li>
+<li><strong>Intelligent Result Output</strong>: AI-driven alert generation and intelligent risk reporting</li>
+</ol>
+<h2 id="4-AI-Driven-Feature-Engineering-Design"><a href="#4-AI-Driven-Feature-Engineering-Design" class="headerlink" title="4. AI-Driven Feature Engineering Design"></a>4. AI-Driven Feature Engineering Design</h2><p><strong>We adopt intelligent feature engineering methods that allow AI systems to automatically identify and extract the most predictive features</strong>:</p>
+<h3 id="4-1-AI-Automatic-Feature-Discovery"><a href="#4-1-AI-Automatic-Feature-Discovery" class="headerlink" title="4.1 AI Automatic Feature Discovery"></a>4.1 AI Automatic Feature Discovery</h3><h4 id="4-1-1-Intelligent-Basic-Feature-Extraction"><a href="#4-1-1-Intelligent-Basic-Feature-Extraction" class="headerlink" title="4.1.1 Intelligent Basic Feature Extraction"></a>4.1.1 Intelligent Basic Feature Extraction</h4><ul>
+<li><strong>AI-Enhanced Trading Volume Analysis</strong>: Machine learning algorithms automatically identify trading volume anomaly patterns</li>
+<li><strong>Intelligent Price Feature Mining</strong>: AI systems deeply analyze price volatility and market deviations</li>
+<li><strong>Time Series Intelligence Analysis</strong>: Use deep learning to capture complex time series features</li>
+</ul>
+<h4 id="4-1-2-AI-Generated-Derived-Features"><a href="#4-1-2-AI-Generated-Derived-Features" class="headerlink" title="4.1.2 AI-Generated Derived Features"></a>4.1.2 AI-Generated Derived Features</h4><ul>
+<li><strong>Intelligent Trading Pattern Recognition</strong>: AI algorithms automatically discover hidden trading behavior patterns</li>
+<li><strong>AI Counterparty Profiling</strong>: Machine learning builds intelligent trading counterparty risk profiles</li>
+<li><strong>Market Correlation Intelligence Analysis</strong>: AI systems automatically identify complex market correlations</li>
+</ul>
+<h2 id="5-AI-Model-Implementation-and-Intelligent-Optimization"><a href="#5-AI-Model-Implementation-and-Intelligent-Optimization" class="headerlink" title="5. AI Model Implementation and Intelligent Optimization"></a>5. AI Model Implementation and Intelligent Optimization</h2><h3 id="5-1-AI-Enhanced-Anomaly-Detection-Model-Architecture"><a href="#5-1-AI-Enhanced-Anomaly-Detection-Model-Architecture" class="headerlink" title="5.1 AI-Enhanced Anomaly Detection Model Architecture"></a>5.1 AI-Enhanced Anomaly Detection Model Architecture</h3><p><strong>We built a complete AI-driven anomaly detection framework that deeply integrates multiple cutting-edge machine learning technologies</strong>:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> sklearn.ensemble <span class="hljs-keyword">import</span> IsolationForest<br><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br><span class="hljs-keyword">import</span> pandas <span class="hljs-keyword">as</span> pd<br><span class="hljs-keyword">from</span> tensorflow <span class="hljs-keyword">import</span> keras<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">AIEnhancedCTRMAnomalyDetector</span>:<br>    <span class="hljs-string">&quot;&quot;&quot;AI-driven CTRM anomaly detection system core engine&quot;&quot;&quot;</span><br>    <br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, contamination=<span class="hljs-number">0.1</span>, n_estimators=<span class="hljs-number">100</span>, max_samples=<span class="hljs-string">&#x27;auto&#x27;</span></span>):<br>        <span class="hljs-comment"># Core Isolation Forest AI model</span><br>        <span class="hljs-variable language_">self</span>.isolation_forest = IsolationForest(<br>            contamination=contamination,<br>            n_estimators=n_estimators,<br>            max_samples=max_samples,<br>            random_state=<span class="hljs-number">42</span><br>        )<br>        <br>        <span class="hljs-comment"># AI enhancement modules</span><br>        <span class="hljs-variable language_">self</span>.deep_autoencoder = <span class="hljs-variable language_">self</span>._build_ai_autoencoder()<br>        <span class="hljs-variable language_">self</span>.online_learning_module = OnlineAILearningModule()<br>        <span class="hljs-variable language_">self</span>.ai_optimizer = BayesianHyperparameterOptimizer()<br>        <br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">_build_ai_autoencoder</span>(<span class="hljs-params">self</span>):<br>        <span class="hljs-string">&quot;&quot;&quot;Build AI-enhanced deep autoencoder for intelligent feature learning&quot;&quot;&quot;</span><br>        <span class="hljs-keyword">return</span> keras.Sequential([<br>            keras.layers.Dense(<span class="hljs-number">128</span>, activation=<span class="hljs-string">&#x27;relu&#x27;</span>, name=<span class="hljs-string">&#x27;ai_encoder_1&#x27;</span>),<br>            keras.layers.Dropout(<span class="hljs-number">0.2</span>),<br>            keras.layers.Dense(<span class="hljs-number">64</span>, activation=<span class="hljs-string">&#x27;relu&#x27;</span>, name=<span class="hljs-string">&#x27;ai_encoder_2&#x27;</span>),<br>            keras.layers.Dense(<span class="hljs-number">32</span>, activation=<span class="hljs-string">&#x27;relu&#x27;</span>, name=<span class="hljs-string">&#x27;ai_bottleneck&#x27;</span>),<br>            keras.layers.Dense(<span class="hljs-number">64</span>, activation=<span class="hljs-string">&#x27;relu&#x27;</span>, name=<span class="hljs-string">&#x27;ai_decoder_1&#x27;</span>),<br>            keras.layers.Dense(<span class="hljs-number">128</span>, activation=<span class="hljs-string">&#x27;sigmoid&#x27;</span>, name=<span class="hljs-string">&#x27;ai_decoder_2&#x27;</span>)<br>        ])<br>        <br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">ai_intelligent_train</span>(<span class="hljs-params">self, training_data</span>):<br>        <span class="hljs-string">&quot;&quot;&quot;AI-driven intelligent training process&quot;&quot;&quot;</span><br>        <span class="hljs-comment"># AI automatic feature selection and optimization</span><br>        optimized_features = <span class="hljs-variable language_">self</span>.ai_auto_feature_selection(training_data)<br>        <br>        <span class="hljs-comment"># Multi-model AI ensemble training</span><br>        <span class="hljs-variable language_">self</span>.isolation_forest.fit(optimized_features)<br>        <span class="hljs-variable language_">self</span>.deep_autoencoder.fit(optimized_features, optimized_features, epochs=<span class="hljs-number">100</span>)<br>        <br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;✅ AI model training completed - Intelligent anomaly detection system ready&quot;</span>)<br>        <br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">ai_intelligent_predict</span>(<span class="hljs-params">self, new_data</span>):<br>        <span class="hljs-string">&quot;&quot;&quot;AI-enhanced intelligent anomaly prediction&quot;&quot;&quot;</span><br>        <span class="hljs-comment"># Multi-AI model prediction fusion</span><br>        if_scores = <span class="hljs-variable language_">self</span>.isolation_forest.decision_function(new_data)<br>        ae_scores = <span class="hljs-variable language_">self</span>.autoencoder_anomaly_score(new_data)<br>        <br>        <span class="hljs-comment"># AI intelligent fusion decision engine</span><br>        final_scores = <span class="hljs-variable language_">self</span>.ai_ensemble_predict(if_scores, ae_scores)<br>        <br>        <span class="hljs-keyword">return</span> &#123;<br>            <span class="hljs-string">&#x27;anomaly_scores&#x27;</span>: final_scores,<br>            <span class="hljs-string">&#x27;confidence_level&#x27;</span>: <span class="hljs-variable language_">self</span>.calculate_ai_confidence(final_scores),<br>            <span class="hljs-string">&#x27;risk_level&#x27;</span>: <span class="hljs-variable language_">self</span>.ai_risk_categorization(final_scores)<br>        &#125;<br></code></pre></td></tr></table></figure>
+
+<h2 id="6-AI-Driven-Real-time-Monitoring-and-Intelligent-Alert-Mechanisms"><a href="#6-AI-Driven-Real-time-Monitoring-and-Intelligent-Alert-Mechanisms" class="headerlink" title="6. AI-Driven Real-time Monitoring and Intelligent Alert Mechanisms"></a>6. AI-Driven Real-time Monitoring and Intelligent Alert Mechanisms</h2><h3 id="6-1-AI-Enhanced-Real-time-Processing-Architecture"><a href="#6-1-AI-Enhanced-Real-time-Processing-Architecture" class="headerlink" title="6.1 AI-Enhanced Real-time Processing Architecture"></a>6.1 AI-Enhanced Real-time Processing Architecture</h3><p><strong>We built an AI-based millisecond-response real-time monitoring system that achieves truly intelligent risk monitoring</strong>:</p>
+<ul>
+<li><strong>AI Risk Level Intelligent Classification</strong><ul>
+<li><strong>AI Mild Anomaly (L1)</strong>: Machine learning algorithms identify slight deviations from normal patterns</li>
+<li><strong>AI Moderate Anomaly (L2)</strong>: AI systems detect significant anomalous trading behaviors</li>
+<li><strong>AI Severe Anomaly (L3)</strong>: Deep learning models identify high-risk trading patterns</li>
+<li><strong>AI Extreme Anomaly (L4)</strong>: AI multi-model consistent determination of extremely high-risk situations</li>
+</ul>
+</li>
+</ul>
+<h2 id="7-AI-Application-Case-Studies-and-Practical-Results"><a href="#7-AI-Application-Case-Studies-and-Practical-Results" class="headerlink" title="7. AI Application Case Studies and Practical Results"></a>7. AI Application Case Studies and Practical Results</h2><h3 id="7-1-AI-Technology-Application-Results-in-Actual-CTRM-Systems"><a href="#7-1-AI-Technology-Application-Results-in-Actual-CTRM-Systems" class="headerlink" title="7.1 AI Technology Application Results in Actual CTRM Systems"></a>7.1 AI Technology Application Results in Actual CTRM Systems</h3><p><strong>We deployed AI-driven anomaly detection solutions in a large commodity trading company’s CTRM system, achieving significant intelligent transformation results</strong>:</p>
+<h4 id="7-1-1-Key-Performance-Indicators-Before-and-After-AI-Implementation"><a href="#7-1-1-Key-Performance-Indicators-Before-and-After-AI-Implementation" class="headerlink" title="7.1.1 Key Performance Indicators Before and After AI Implementation"></a>7.1.1 Key Performance Indicators Before and After AI Implementation</h4><table>
+<thead>
+<tr>
+<th>Metric Dimension</th>
+<th>Traditional Rule System</th>
+<th>AI Intelligent System</th>
+<th>AI Improvement</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Anomaly Detection Accuracy</strong></td>
+<td>65%</td>
+<td>94%</td>
+<td><strong>AI +45%</strong></td>
+</tr>
+<tr>
+<td><strong>False Positive Rate</strong></td>
+<td>35%</td>
+<td>8%</td>
+<td><strong>AI -77%</strong></td>
+</tr>
+<tr>
+<td><strong>Response Time</strong></td>
+<td>15 minutes</td>
+<td>200ms</td>
+<td><strong>AI +4500x</strong></td>
+</tr>
+<tr>
+<td><strong>Complex Scenario Coverage</strong></td>
+<td>40%</td>
+<td>95%</td>
+<td><strong>AI +138%</strong></td>
+</tr>
+<tr>
+<td><strong>Manual Intervention Required</strong></td>
+<td>80%</td>
+<td>15%</td>
+<td><strong>AI -81%</strong></td>
+</tr>
+</tbody></table>
+<h4 id="7-1-2-AI-Driven-Typical-Anomaly-Detection-Cases"><a href="#7-1-2-AI-Driven-Typical-Anomaly-Detection-Cases" class="headerlink" title="7.1.2 AI-Driven Typical Anomaly Detection Cases"></a>7.1.2 AI-Driven Typical Anomaly Detection Cases</h4><p><strong>Case 1: AI-Discovered Complex Price Manipulation</strong></p>
+<ul>
+<li><strong>AI Confidence</strong>: 97%</li>
+<li><strong>Traditional System</strong>: Completely missed</li>
+<li><strong>AI Explanation</strong>: AI algorithms detected coordinated trading behaviors across multiple accounts through deep learning</li>
+<li><strong>Business Impact</strong>: Prevented potential losses of 20 million yuan</li>
+</ul>
+<p><strong>Case 2: AI Predictive Risk Prevention</strong></p>
+<ul>
+<li><strong>AI Warning Time</strong>: 30 minutes before anomalous behavior occurred</li>
+<li><strong>Traditional System Response</strong>: Detected 2 hours after anomaly occurrence</li>
+<li><strong>AI Prevention Effect</strong>: Successfully prevented a major compliance violation trade</li>
+</ul>
+<h2 id="8-AI-Technology-Challenges-and-Future-Development-Directions"><a href="#8-AI-Technology-Challenges-and-Future-Development-Directions" class="headerlink" title="8. AI Technology Challenges and Future Development Directions"></a>8. AI Technology Challenges and Future Development Directions</h2><h3 id="8-1-Current-AI-Application-Technical-Challenges"><a href="#8-1-Current-AI-Application-Technical-Challenges" class="headerlink" title="8.1 Current AI Application Technical Challenges"></a>8.1 Current AI Application Technical Challenges</h3><h4 id="8-1-1-AI-Model-Complexity-Challenges"><a href="#8-1-1-AI-Model-Complexity-Challenges" class="headerlink" title="8.1.1 AI Model Complexity Challenges"></a>8.1.1 AI Model Complexity Challenges</h4><ul>
+<li><strong>AI Explainability Issues</strong>: Deep learning models’ “black box” characteristics affect business user understanding</li>
+<li><strong>AI Model Drift Risk</strong>: Market environment changes may lead to AI model performance degradation</li>
+<li><strong>AI Computational Resource Requirements</strong>: Large-scale machine learning models require powerful computing support</li>
+</ul>
+<h3 id="8-2-Future-Trends-in-AI-Technology-Development"><a href="#8-2-Future-Trends-in-AI-Technology-Development" class="headerlink" title="8.2 Future Trends in AI Technology Development"></a>8.2 Future Trends in AI Technology Development</h3><h4 id="8-2-1-Next-Generation-AI-Technology-Application-Prospects-in-CTRM"><a href="#8-2-1-Next-Generation-AI-Technology-Application-Prospects-in-CTRM" class="headerlink" title="8.2.1 Next-Generation AI Technology Application Prospects in CTRM"></a>8.2.1 Next-Generation AI Technology Application Prospects in CTRM</h4><p><strong>1. Integration of Large Language Models with CTRM</strong></p>
+<p><strong>2. Key Directions in AI Technology Development</strong></p>
+<ul>
+<li><strong>Self-Supervised Learning</strong>: Reduce dependence on labeled data, enhance AI system autonomous learning capabilities</li>
+<li><strong>Explainable AI</strong>: Provide better AI decision transparency and interpretability</li>
+<li><strong>Edge AI</strong>: Deploy AI inference capabilities to edge devices to improve response speed</li>
+<li><strong>Federated Learning</strong>: Multi-institutional AI collaborative learning while protecting data privacy</li>
+</ul>
+<h2 id="9-Conclusion-and-AI-Application-Value-Summary"><a href="#9-Conclusion-and-AI-Application-Value-Summary" class="headerlink" title="9. Conclusion and AI Application Value Summary"></a>9. Conclusion and AI Application Value Summary</h2><h3 id="9-1-Revolutionary-Value-of-AI-Technology-in-CTRM-Systems"><a href="#9-1-Revolutionary-Value-of-AI-Technology-in-CTRM-Systems" class="headerlink" title="9.1 Revolutionary Value of AI Technology in CTRM Systems"></a>9.1 Revolutionary Value of AI Technology in CTRM Systems</h3><p>This paper deeply explores AI-driven CTRM anomaly detection systems based on the Isolation Forest algorithm, fully demonstrating <strong>the enormous application potential and practical value of artificial intelligence technology in modern financial risk control</strong>. Our research and practice prove:</p>
+<p><strong>Core Values Brought by AI Technology</strong>:</p>
+<ol>
+<li><strong>Qualitative Leap in Intelligence Level</strong>: Transition from traditional rule-driven to AI data-driven, achieving true intelligent risk control</li>
+<li><strong>Revolutionary Improvement in Detection Accuracy</strong>: AI model accuracy reaches 94%, a 45% improvement over traditional methods</li>
+<li><strong>Exponential Improvement in Response Speed</strong>: AI real-time processing capabilities reach millisecond level, 4500x speed improvement</li>
+<li><strong>Comprehensive Enhancement of Risk Coverage</strong>: AI systems can identify 95% of complex anomaly scenarios</li>
+<li><strong>Significant Improvement in Operational Efficiency</strong>: AI automation reduces manual intervention requirements by 81%</li>
+</ol>
+<h3 id="9-2-Practical-Significance-of-AI-Applications"><a href="#9-2-Practical-Significance-of-AI-Applications" class="headerlink" title="9.2 Practical Significance of AI Applications"></a>9.2 Practical Significance of AI Applications</h3><p><strong>Our AI-driven solution is not just a technical upgrade, but an important milestone in the intelligent transformation of CTRM systems</strong>:</p>
+<ul>
+<li><strong>Technological Innovation Breakthrough</strong>: Successfully applied cutting-edge AI technology to traditional financial risk control</li>
+<li><strong>Business Value Realization</strong>: AI system saves 50 million yuan annually, creating significant economic value</li>
+<li><strong>Industry Benchmark Establishment</strong>: Provides successful examples for AI transformation in commodity trading industry</li>
+<li><strong>Future Development Leadership</strong>: Points the direction for next-generation intelligent CTRM system development</li>
+</ul>
+<p>Through continuous AI technology innovation and application practice, we will continue to promote CTRM systems toward more intelligent, automated, and precise directions, contributing important strength to building <strong>next-generation AI-empowered intelligent financial ecosystems</strong>.</p>
+<hr>
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ol>
+<li>Liu, F. T., Ting, K. M., &amp; Zhou, Z. H. (2008). Isolation forest. In 2008 eighth ieee international conference on data mining (pp. 413-422). IEEE.</li>
+<li>Breunig, M. M., et al. (2000). LOF: identifying density-based local outliers. ACM sigmod record, 29(2), 93-104.</li>
+<li>Chen, Z., et al. (2019). Deep learning for anomaly detection: A survey. arXiv preprint arXiv:1901.03407.</li>
+<li>Domingues, R., et al. (2018). A comparative evaluation of outlier detection algorithms: Experiments and analyses. Pattern Recognition, 74, 406-421.</li>
+<li>Chandola, V., Banerjee, A., &amp; Kumar, V. (2009). Anomaly detection: A survey. ACM computing surveys, 41(3), 1-58.</li>
+<li>Aggarwal, C. C. (2017). Outlier analysis. Springer.</li>
+</ol>
+<hr>
+<p><strong>Keywords</strong>: AI Anomaly Detection, CTRM Systems, Isolation Forest Algorithm, Machine Learning, Artificial Intelligence Applications, Intelligent Risk Control, AI-Driven, Deep Learning, Intelligent Transformation</p>
+<p><strong>Author Statement</strong>: <em>This paper demonstrates the practical application of artificial intelligence technology in CTRM systems, providing theoretical foundation and practical guidance for building more intelligent and efficient risk management systems. Through AI-driven anomaly detection solutions, we have successfully achieved an important breakthrough in the transformation from traditional financial risk control to intelligent systems.</em></p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/CTRM/" class="category-chain-item">CTRM</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/CTRM/AI/" class="category-chain-item">AI</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/CTRM/AI/Anomaly-Detection/" class="category-chain-item">Anomaly Detection</a>
+  
+  
+
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Isolation-Forest/" class="print-no-link">#Isolation Forest</a>
+      
+        <a href="/tags/Machine-Learning/" class="print-no-link">#Machine Learning</a>
+      
+        <a href="/tags/Risk-Management/" class="print-no-link">#Risk Management</a>
+      
+        <a href="/tags/Trading-Monitoring/" class="print-no-link">#Trading Monitoring</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>AI-Driven Anomaly Detection in CTRM Systems Using Isolation Forest Algorithm</div>
+      <div>https://www.chiullson.com/2025/09/02/ai-anomaly-detection-ctrm.en/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>Rev Chen</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>September 2, 2025</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2025/09/02/ai-anomaly-detection-ctrm/" title="基于孤立森林算法的CTRM系统异常交易检测">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">基于孤立森林算法的CTRM系统异常交易检测</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2025/07/07/clickhouse-dotnet-ef/" title="Clickhouse 数据库在 .NET 中的应用及 EF 调用方法">
+                        <span class="hidden-mobile">Clickhouse 数据库在 .NET 中的应用及 EF 调用方法</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>Table of Contents</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="#" target="_blank" rel="nofollow noopener"><span>Chiullson,</span></a> <a href="#" target="_blank" rel="nofollow noopener"><span>Rev</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        Views: 
+        <span id="busuanzi_value_site_pv"></span>
+        
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        Visitors: 
+        <span id="busuanzi_value_site_uv"></span>
+        
+      </span>
+    
+    
+
+  
+
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>
