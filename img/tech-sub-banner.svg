@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 600" width="100%" height="100%">
+  <!-- Definitions -->
+  <defs>
+    <!-- Dark hacker console background -->
+    <linearGradient id="techBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050e18" />
+      <stop offset="50%" stop-color="#071724" />
+      <stop offset="100%" stop-color="#020912" />
+    </linearGradient>
+
+    <!-- Programming Cyan/Emerald Radiance -->
+    <radialGradient id="codeGlow" cx="30%" cy="30%" r="45%">
+      <stop offset="0%" stop-color="#0f766e" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#0f766e" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="dbGlow" cx="80%" cy="50%" r="45%">
+      <stop offset="0%" stop-color="#0891b2" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#0891b2" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Tech Grid and Code streams -->
+    <pattern id="binaryStream" width="120" height="120" patternUnits="userSpaceOnUse">
+      <text x="10" y="20" fill="rgba(20, 184, 166, 0.03)" font-family="monospace" font-size="12">10101101</text>
+      <text x="30" y="50" fill="rgba(20, 184, 166, 0.02)" font-family="monospace" font-size="10">0101</text>
+      <text x="15" y="80" fill="rgba(20, 184, 166, 0.03)" font-family="monospace" font-size="11">THRIFT</text>
+      <text x="60" y="100" fill="rgba(20, 184, 166, 0.02)" font-family="monospace" font-size="12">RPC</text>
+    </pattern>
+    <pattern id="techGrid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M 60 0 L 0 0 0 60" fill="none" stroke="rgba(20, 184, 166, 0.015)" stroke-width="1" />
+    </pattern>
+  </defs>
+
+  <!-- Background Layer -->
+  <rect width="1600" height="600" fill="url(#techBg)" />
+  <rect width="1600" height="600" fill="url(#codeGlow)" />
+  <rect width="1600" height="600" fill="url(#dbGlow)" />
+  <rect width="1600" height="600" fill="url(#techGrid)" />
+  <rect width="1600" height="600" fill="url(#binaryStream)" />
+
+  <!-- Abstract Microservice Thrift Client-Server Network Graphs -->
+  <g stroke="#14b8a6" stroke-width="0.8" fill="none" opacity="0.35">
+    <!-- Server node -->
+    <rect x="150" y="150" width="110" height="45" rx="5" stroke-width="1.5" />
+    <text x="165" y="177" fill="#14b8a6" font-family="monospace" font-size="11" stroke="none">[ Thrift_Server ]</text>
+    
+    <!-- Client node A -->
+    <rect x="420" y="80" width="115" height="40" rx="5" />
+    <text x="435" y="105" fill="#14b8a6" font-family="monospace" font-size="10" stroke="none">.NET Core Client</text>
+    
+    <!-- Client node B -->
+    <rect x="420" y="220" width="115" height="40" rx="5" />
+    <text x="435" y="245" fill="#14b8a6" font-family="monospace" font-size="10" stroke="none">Core Python Worker</text>
+
+    <!-- Communication lines -->
+    <path d="M 260,172 L 420,100" />
+    <path d="M 260,172 L 420,240" />
+
+    <circle cx="340" cy="136" r="3" fill="#06b6d4" />
+    <circle cx="340" cy="206" r="3" fill="#1ebd8c" />
+  </g>
+
+  <!-- High-Performance ClickHouse Columnar Database Concept Diagram -->
+  <g transform="translate(1000, 160)" opacity="0.25">
+    <!-- Server Storage Cylinder Stack -->
+    <path d="M 200,50 C 200,20 280,20 280,50 L 280,170 C 280,200 200,200 200,170 Z" fill="none" stroke="#0891b2" stroke-width="2" />
+    <path d="M 200,80 C 200,50 280,50 280,80" fill="none" stroke="#0891b2" stroke-width="1.5" />
+    <path d="M 200,110 C 200,80 280,80 280,110" fill="none" stroke="#0891b2" stroke-width="1.5" />
+    <path d="M 200,140 C 200,110 280,110 280,140" fill="none" stroke="#0891b2" stroke-width="1.5" />
+    
+    <text x="210" y="220" fill="#0891b2" font-family="monospace" font-size="11" font-weight="bold" stroke="none">ClickHouse_Cluster</text>
+    
+    <!-- Columnar Data Projections -->
+    <g fill="#14b8a6" stroke="none">
+      <rect x="50" y="50" width="12" height="15" rx="1" />
+      <rect x="50" y="70" width="12" height="15" rx="1" />
+      <rect x="50" y="90" width="12" height="15" rx="1" />
+
+      <rect x="66" y="50" width="12" height="15" rx="1" fill="#0891b2" />
+      <rect x="66" y="70" width="12" height="15" rx="1" fill="#0891b2" />
+      <rect x="66" y="90" width="12" height="15" rx="1" fill="#0891b2" />
+      
+      <rect x="82" y="50" width="12" height="15" rx="1" fill="#3b82f6" />
+      <rect x="82" y="70" width="12" height="15" rx="1" fill="#3b82f6" />
+      <rect x="82" y="90" width="12" height="15" rx="1" fill="#3b82f6" />
+    </g>
+    <!-- Connect projection to stack -->
+    <path d="M 98,75 L 200,110" fill="none" stroke="rgba(20, 184, 166, 0.3)" stroke-width="1" stroke-dasharray="3,3" />
+  </g>
+
+  <!-- Code Editor Aesthetics (Floating UI tags) -->
+  <g opacity="0.3" stroke="rgba(255,255,255,0.15)" stroke-width="1" fill="none" font-family="monospace">
+    <rect x="80" y="340" width="450" height="180" rx="8" fill="rgba(7, 23, 36, 0.6)" />
+    <!-- Mini window circles -->
+    <circle cx="105" cy="360" r="5" fill="#ff5f56" stroke="none" />
+    <circle cx="120" cy="360" r="5" fill="#ffbd2e" stroke="none" />
+    <circle cx="135" cy="360" r="5" fill="#27c93f" stroke="none" />
+    
+    <!-- Mock file contents -->
+    <g fill="rgba(20, 184, 166, 0.7)" stroke="none" font-size="11">
+      <text x="105" y="400">using ClickHouse.Client;</text>
+      <text x="105" y="423">var connection = new ClickHouseConnection(connectionString);</text>
+      <text x="105" y="446">await connection.ExecuteBatchAsync("INSERT INTO T_DEALS");</text>
+      <text x="105" y="475">_logger.LogInformation("Thread Process completed.");</text>
+    </g>
+  </g>
+
+  <!-- Technical Telemetry Labels -->
+  <g fill="rgba(20,184,166,0.5)" font-family="monospace" font-size="10">
+    <text x="50" y="50">DIGITAL LAB CHANNEL // SYSTEM ARCHITECTURE &amp; COMPILE SYSTEMS</text>
+    <text x="50" y="70">STACK: CLICKHOUSE / .NET CORE / EF CORE / TRHIFT / PIVOT_ENGINE</text>
+    
+    <text x="1330" y="50">ENV: PRODUCT_STABLE</text>
+    <text x="1330" y="70">SERVER_ST: CLUSTER_9_OK</text>
+    <text x="1330" y="90">THREAD_POOL: OPTIMIZED</text>
+  </g>
+
+  <!-- Bottom boundary line -->
+  <line x1="0" y1="580" x2="1600" y2="580" stroke="rgba(20, 184, 166, 0.1)" stroke-width="2" />
+</svg>
