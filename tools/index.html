@@ -23,11 +23,11 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="实用工具集">
 <meta property="og:url" content="https://www.chiullson.com/tools/index.html">
-<meta property="og:site_name" content="Hi Rev">
+<meta property="og:site_name" content="Chiullson&#39;s Blog">
 <meta property="og:description" content="常用在线工具与效率收藏，方便快速检索与访问。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-10-16T07:00:00.000Z">
-<meta property="article:modified_time" content="2025-10-16T07:37:39.393Z">
+<meta property="article:modified_time" content="2026-06-16T10:40:25.028Z">
 <meta property="article:author" content="Rev Chen">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -35,7 +35,7 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>实用工具集 - Hi Rev</title>
+  <title>实用工具集 - Chiullson&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -61,6 +61,10 @@
     <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
   
 
+
+
+  
+<link rel="stylesheet" href="/css/custom.css">
 
 
 
@@ -134,21 +138,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/archives/" target="_self">
-                <i class="iconfont icon-archive-fill"></i>
-                <span>Archives</span>
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/categories/" target="_self">
+              <a class="nav-link" href="/categories/CTRM/" target="_self">
                 <i class="iconfont icon-category-fill"></i>
-                <span>Categories</span>
+                <span>CTRM研究</span>
               </a>
             </li>
           
@@ -158,9 +150,21 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/tags/" target="_self">
+              <a class="nav-link" href="/categories/%E7%BC%96%E7%A8%8B/" target="_self">
                 <i class="iconfont icon-tags-fill"></i>
-                <span>Tags</span>
+                <span>开发技术</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/%E6%97%A5%E5%B8%B8/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>日常分享</span>
               </a>
             </li>
           
@@ -212,7 +216,7 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/timg.jpeg') no-repeat center center; background-size: cover;">
+     style="background: url('/img/ctrm-banner.svg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
@@ -248,68 +252,27 @@
 <article class="page-content">
   
 <style>
+.tools-page {
+  max-width: 1200px;
+  margin: 0 auto;
+}
 .tool-intro {
   padding: 28px;
-  margin-bottom: 24px;
+  margin-bottom: 32px;
   border-radius: 18px;
-  background: linear-gradient(135deg, rgba(102, 126, 234, 0.15), rgba(118, 75, 162, 0.1));
-  border: 1px solid rgba(118, 75, 162, 0.12);
-}
-.tool-sidebar {
-  margin: 36px 0;
-  padding: 20px 22px;
-  border-radius: 16px;
-  background: rgba(241, 245, 249, 0.85);
-  border: 1px solid rgba(148, 163, 184, 0.35);
-}
-.tool-sidebar__title {
-  margin: 0 0 14px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #334155;
-}
-.tool-quick-search {
-  width: 100%;
-  padding: 10px 14px;
-  border-radius: 12px;
-  border: 1px solid rgba(148, 163, 184, 0.45);
-  background: rgba(255, 255, 255, 0.95);
-  color: #1f2937;
-  font-size: 0.95rem;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
-}
-.tool-quick-search:focus {
-  outline: none;
-  border-color: rgba(102, 126, 234, 0.55);
-  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.18);
-}
-.tool-toc {
-  margin-top: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.tool-toc a {
-  color: #334155;
-  text-decoration: none;
-  font-size: 0.95rem;
-  padding: 6px 10px;
-  border-radius: 10px;
-  transition: background 0.2s ease;
-}
-.tool-toc a:hover {
-  background: rgba(102, 126, 234, 0.12);
-  color: #1d4ed8;
+  background: linear-gradient(135deg, rgba(30, 58, 138, 0.08), rgba(15, 118, 110, 0.05));
+  border: 1px solid rgba(30, 58, 138, 0.1);
 }
 .tool-intro h2 {
   margin: 0 0 12px;
   font-size: 1.6rem;
   font-weight: 600;
-  color: #2f3a56;
+  color: #1e3a8a;
 }
 .tool-intro p {
   margin: 0 0 16px;
-  color: #4a5568;
+  color: #4b5563;
+  line-height: 1.6;
 }
 .tool-tags {
   display: flex;
@@ -320,56 +283,142 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 8px 14px;
+  padding: 8px 16px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.85);
-  border: 1px solid rgba(102, 126, 234, 0.25);
-  color: #44506b;
-  font-size: 0.9rem;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(30, 58, 138, 0.12);
+  color: #374151;
+  font-size: 0.88rem;
   text-decoration: none;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
 }
 .tool-tag:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.25);
+  transform: translateY(-2px);
+  background-color: #ffffff;
+  box-shadow: 0 6px 16px rgba(30, 58, 138, 0.1);
+  color: #1e3a8a;
 }
+
+/* 布局：两栏式网格系统 */
+.tools-layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 36px;
+  align-items: start;
+}
+.tools-main {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* 侧边搜索与导航栏 */
+.tool-sidebar {
+  position: sticky;
+  top: 100px;
+  padding: 24px;
+  border-radius: 16px;
+  background: rgba(248, 250, 252, 0.7);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+.tool-sidebar__title {
+  margin: 0 0 14px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1e293b;
+  letter-spacing: 0.02em;
+}
+.tool-quick-search {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(203, 213, 225, 0.8);
+  background: rgba(255, 255, 255, 0.9);
+  color: #0f172a;
+  font-size: 0.92rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+.tool-quick-search:focus {
+  outline: none;
+  border-color: #1e3a8a;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.12);
+}
+.tool-toc {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.tool-toc strong {
+  color: #64748b;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 6px;
+  display: block;
+}
+.tool-toc a {
+  color: #475569;
+  text-decoration: none;
+  font-size: 0.92rem;
+  padding: 8px 12px;
+  border-radius: 10px;
+  transition: background-color 0.2s ease, color 0.2s ease, padding-left 0.2s ease;
+}
+.tool-toc a:hover {
+  background-color: rgba(30, 58, 138, 0.06);
+  color: #1e3a8a;
+  padding-left: 16px;
+  font-weight: 500;
+}
+
+/* 工具主体卡片区域 */
 .tool-section {
-  margin: 40px 0;
+  scroll-margin-top: 100px; /* 滚动定位偏移，避免遮挡 */
+  margin-bottom: 12px;
 }
 .tool-section h3 {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 8px 14px;
+  padding: 8px 18px;
   border-radius: 999px;
-  background: rgba(102, 126, 234, 0.12);
-  color: #3b4c6b;
-  font-size: 1.25rem;
+  background: rgba(30, 58, 138, 0.06);
+  color: #1e3a8a;
+  font-size: 1.15rem;
   font-weight: 600;
+  margin: 0 0 20px 0;
 }
 .tools-grid {
-  margin-top: 24px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 18px;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+  margin-bottom: 40px;
 }
+
+/* 极致拟量化科技卡片 */
 .tool-card {
   display: flex;
   flex-direction: column;
   gap: 14px;
-  padding: 20px;
+  padding: 22px;
   border-radius: 16px;
-  background: rgba(255, 255, 255, 0.92);
-  border: 1px solid rgba(226, 232, 240, 0.9);
-  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.03);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   text-decoration: none;
   color: inherit;
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .tool-card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(102, 126, 234, 0.4);
-  box-shadow: 0 16px 32px rgba(102, 126, 234, 0.25);
+  transform: translateY(-5px);
+  border-color: rgba(30, 58, 138, 0.25);
+  box-shadow: 0 16px 36px rgba(30, 58, 138, 0.08);
 }
 .tool-card__icon {
   width: 46px;
@@ -378,125 +427,150 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(102, 126, 234, 0.15);
+  background: rgba(30, 58, 138, 0.06);
   font-size: 1.3rem;
+  transition: transform 0.3s ease;
+}
+.tool-card:hover .tool-card__icon {
+  transform: scale(1.08) rotate(5deg);
 }
 .tool-card__title {
   margin: 0;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   font-weight: 600;
-  color: #1f2937;
+  color: #0f172a;
 }
 .tool-card__desc {
   margin: 0;
-  font-size: 0.92rem;
-  color: #4a5568;
-  line-height: 1.45;
+  font-size: 0.88rem;
+  color: #4b5563;
+  line-height: 1.5;
+  flex-grow: 1; /* 让内容自适应高度撑满 */
 }
 .tool-card__link {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-size: 0.88rem;
-  color: #4c6ef5;
+  font-size: 0.82rem;
+  color: #2563eb;
   font-weight: 600;
-  opacity: 0.9;
-  text-transform: uppercase;
+  opacity: 0.8;
   letter-spacing: 0.02em;
 }
+.tool-card:hover .tool-card__link {
+  opacity: 1;
+  text-decoration: underline;
+}
 .tool-note {
-  margin-top: 40px;
-  padding: 16px 20px;
+  padding: 18px 22px;
   border-radius: 12px;
-  background: rgba(236, 252, 203, 0.6);
-  border: 1px solid rgba(132, 204, 22, 0.35);
-  color: #3d4a1f;
-  font-size: 0.92rem;
+  background: rgba(15, 118, 110, 0.04);
+  border: 1px solid rgba(15, 118, 110, 0.15);
+  color: #0f766e;
+  font-size: 0.9rem;
+  line-height: 1.5;
 }
 
+/* 极致暗黑模式自适应调优 */
 .tools-page.tools-dark .tool-intro {
-  background: linear-gradient(135deg, rgba(59, 130, 246, 0.18), rgba(147, 51, 234, 0.18));
-  border-color: rgba(129, 140, 248, 0.32);
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(20, 184, 166, 0.08));
+  border-color: rgba(59, 130, 246, 0.2);
 }
 .tools-page.tools-dark .tool-intro h2 {
-  color: #e0e7ff;
+  color: #3b82f6;
 }
 .tools-page.tools-dark .tool-intro p {
-  color: #cbd5f5;
+  color: #94a3b8;
 }
 .tools-page.tools-dark .tool-tag {
-  background: rgba(30, 41, 59, 0.85);
-  border-color: rgba(129, 140, 248, 0.4);
-  color: #cbd5f5;
+  background: rgba(30, 41, 59, 0.5);
+  border-color: rgba(148, 163, 184, 0.15);
+  color: #94a3b8;
 }
 .tools-page.tools-dark .tool-tag:hover {
-  box-shadow: 0 8px 20px rgba(129, 140, 248, 0.35);
+  background-color: rgba(30, 41, 59, 0.8);
+  color: #3b82f6;
+  border-color: rgba(59, 130, 246, 0.3);
+  box-shadow: 0 6px 16px rgba(59, 130, 246, 0.15);
 }
 .tools-page.tools-dark .tool-sidebar {
-  background: rgba(15, 23, 42, 0.75);
-  border-color: rgba(94, 114, 228, 0.45);
+  background: rgba(15, 23, 42, 0.45);
+  border-color: rgba(148, 163, 184, 0.15);
 }
 .tools-page.tools-dark .tool-sidebar__title {
-  color: #e2e8f0;
+  color: #f1f5f9;
 }
 .tools-page.tools-dark .tool-quick-search {
-  background: rgba(15, 23, 42, 0.9);
-  border-color: rgba(94, 114, 228, 0.55);
-  color: #e2e8f0;
+  background: rgba(30, 41, 59, 0.7);
+  border-color: rgba(148, 163, 184, 0.2);
+  color: #f1f5f9;
 }
-.tools-page.tools-dark .tool-quick-search::placeholder {
-  color: rgba(148, 163, 184, 0.8);
+.tools-page.tools-dark .tool-quick-search:focus {
+  border-color: #3b82f6;
+  background-color: rgba(30, 41, 59, 0.9);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
 }
 .tools-page.tools-dark .tool-toc a {
-  color: #cbd5f5;
+  color: #94a3b8;
 }
 .tools-page.tools-dark .tool-toc a:hover {
-  background: rgba(129, 140, 248, 0.2);
-  color: #a5b4fc;
-}
-.tools-page.tools-dark .tool-toc strong {
-  color: #a5b4fc !important;
+  background-color: rgba(59, 130, 246, 0.08);
+  color: #3b82f6;
 }
 .tools-page.tools-dark .tool-section h3 {
-  background: rgba(94, 114, 228, 0.24);
-  color: #dbeafe;
+  background: rgba(59, 130, 246, 0.1);
+  color: #3b82f6;
 }
 .tools-page.tools-dark .tool-card {
-  background: rgba(15, 23, 42, 0.92);
-  border-color: rgba(59, 130, 246, 0.35);
-  box-shadow: 0 12px 28px rgba(2, 6, 23, 0.65);
+  background: rgba(30, 41, 59, 0.45);
+  border-color: rgba(148, 163, 184, 0.12);
+  box-shadow: none;
 }
 .tools-page.tools-dark .tool-card:hover {
-  border-color: rgba(129, 140, 248, 0.55);
-  box-shadow: 0 18px 34px rgba(30, 58, 138, 0.55);
+  border-color: rgba(59, 130, 246, 0.35);
+  box-shadow: 0 16px 36px rgba(59, 130, 246, 0.12);
 }
 .tools-page.tools-dark .tool-card__icon {
-  background: rgba(59, 130, 246, 0.18);
+  background: rgba(59, 130, 246, 0.1);
 }
 .tools-page.tools-dark .tool-card__title {
-  color: #e2e8f0;
+  color: #f1f5f9;
 }
 .tools-page.tools-dark .tool-card__desc {
-  color: #cbd5f5;
+  color: #94a3b8;
 }
 .tools-page.tools-dark .tool-card__link {
-  color: #a5b4fc;
+  color: #60a5fa;
 }
 .tools-page.tools-dark .tool-note {
-  background: rgba(56, 189, 248, 0.2);
-  border-color: rgba(59, 130, 246, 0.45);
-  color: #bfdbfe;
+  background: rgba(20, 184, 166, 0.04);
+  border-color: rgba(20, 184, 166, 0.2);
+  color: #2dd4bf;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 991px) {
+  .tools-layout {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .tool-sidebar {
+    position: static;
+  }
   .tool-intro {
     padding: 22px;
+    margin-bottom: 24px;
+  }
+}
+@media (max-width: 640px) {
+  .tool-intro h2 {
+    font-size: 1.4rem;
   }
   .tool-section h3 {
     font-size: 1.1rem;
+    padding: 6px 14px;
   }
-  .tool-sidebar {
-    margin-top: 24px;
+  .tools-grid {
+    grid-template-columns: 1fr;
   }
 }
 </style>
@@ -508,20 +582,23 @@
   <div class="tool-tags" id="toolTags"></div>
 </div>
 
-<aside class="tool-sidebar">
-  <h3 class="tool-sidebar__title">🔎 快捷搜索</h3>
-  <input id="toolSearch" class="tool-quick-search" type="search" placeholder="输入关键词筛选工具..." autocomplete="off" />
-  <nav class="tool-toc" id="toolToc">
-    <strong style="color:#64748b; font-size:0.85rem;">快速导航</strong>
-  </nav>
-</aside>
+<div class="tools-layout">
+  <aside class="tool-sidebar">
+    <h3 class="tool-sidebar__title">🔎 快捷搜索</h3>
+    <input id="toolSearch" class="tool-quick-search" type="search" placeholder="输入关键词筛选工具..." autocomplete="off" />
+    <nav class="tool-toc" id="toolToc">
+      <strong>快速导航</strong>
+    </nav>
+  </aside>
 
-<div id="toolSections"></div>
-
-<div class="tool-note">
-  提示：收藏持续更新，若有新的常用工具或内部效率提升方案，欢迎通过 PR / Issue 或直接联系维护者补充。
+  <div class="tools-main">
+    <div id="toolSections"></div>
+    
+    <div class="tool-note">
+      提示：收藏持续更新，若有新的常用工具或内部效率提升方案，欢迎通过 PR / Issue 或直接联系维护者补充。
+    </div>
+  </div>
 </div>
-
 </div>
 
 <script>
@@ -998,6 +1075,10 @@
   <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
 
 
+
+
+  
+<script src="/js/custom.js"></script>
 
 
 
