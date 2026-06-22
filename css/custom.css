@@ -435,4 +435,456 @@
   }
 }
 
+/* ==========================================
+   12. WeChat Citation & QR Code Component (微信公众号引用及美化样式)
+   ========================================== */
+.wechat-citation-card {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  background: rgba(7, 193, 96, 0.02) !important; /* 精致更通透的微渐变底色 */
+  border: 1px solid rgba(7, 193, 96, 0.12) !important;
+  border-left: 5px solid #07C160 !important; /* 微信经典品牌绿 */
+  border-radius: 12px !important;
+  padding: 22px 28px !important; /* 加大呼吸留白，视觉更显宽松尊贵 */
+  margin: 35px 0 !important;
+  gap: 24px !important;
+  backdrop-filter: blur(8px) !important;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.01) !important;
+}
+
+[data-user-color-scheme="dark"] .wechat-citation-card {
+  background: rgba(0, 177, 80, 0.03) !important;
+  border: 1px solid rgba(0, 177, 80, 0.15) !important;
+  border-left: 5px solid #00B150 !important; /* 暗黑模式下更透亮的绿 */
+}
+
+.wechat-citation-card:hover {
+  transform: translateY(-3px) !important; /* 悬浮感微幅增强 */
+  box-shadow: 0 12px 28px rgba(7, 193, 96, 0.08) !important;
+  border-color: rgba(7, 193, 96, 0.25) !important;
+}
+
+.wechat-citation-card:hover .wechat-citation-qrcode img {
+  transform: scale(1.05) rotate(1deg) !important; /* 微缩放微偏斜，带有生命感的视觉变化 */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08) !important;
+}
+
+.wechat-citation-info {
+  flex: 1 !important;
+}
+
+.wechat-citation-header {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  gap: 10px !important;
+  margin-bottom: 8px !important;
+}
+
+.wechat-badge {
+  background-color: #07C160 !important;
+  color: white !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  padding: 2px 8px !important;
+  border-radius: 4px !important;
+}
+
+[data-user-color-scheme="dark"] .wechat-badge {
+  background-color: #00B150 !important;
+}
+
+.wechat-author {
+  font-size: 13px !important;
+  color: #64748B !important;
+  font-weight: 500 !important;
+}
+
+[data-user-color-scheme="dark"] .wechat-author {
+  color: #94A3B8 !important;
+}
+
+.wechat-citation-title {
+  font-size: 17px !important;
+  font-weight: 700 !important;
+  color: #0F172A !important;
+  margin-bottom: 8px !important;
+}
+
+[data-user-color-scheme="dark"] .wechat-citation-title {
+  color: #F8FAFC !important;
+}
+
+.wechat-citation-title a {
+  color: #07C160 !important;
+  text-decoration: none !important;
+  transition: color 0.2s ease !important;
+}
+
+.wechat-citation-title a:hover {
+  color: #059b4c !important;
+  text-decoration: underline !important;
+}
+
+[data-user-color-scheme="dark"] .wechat-citation-title a {
+  color: #00B150 !important;
+}
+
+[data-user-color-scheme="dark"] .wechat-citation-title a:hover {
+  color: #34D399 !important;
+}
+
+.wechat-citation-text {
+  font-size: 13.5px !important;
+  line-height: 1.6 !important;
+  color: #475569 !important;
+  margin: 0 !important;
+}
+
+[data-user-color-scheme="dark"] .wechat-citation-text {
+  color: #CBD5E1 !important;
+}
+
+.wechat-citation-qrcode {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  width: 210px !important; /* 从 125px 大幅拓宽，容纳横向微宽的官方搜一搜名片卡 */
+  flex-shrink: 0 !important;
+}
+
+.wechat-citation-qrcode img {
+  width: 190px !important; /* 提升至 190px，让横向名片呈现出舒展、得体且高可读的黄金宽度 */
+  height: auto !important; /* 极客细节：高度自适应，支撑高分辨率非正方形微信名片完美不拉伸！ */
+  border-radius: 8px !important; /* 圆角微调至 8px 支持现代化卡片质感 */
+  border: 1px solid rgba(0, 0, 0, 0.05) !important;
+  margin-bottom: 6px !important;
+  display: inline-block !important;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important; /* 超顺滑物理反弹曲线 */
+}
+
+[data-user-color-scheme="dark"] .wechat-citation-qrcode img {
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+.wechat-citation-qrcode span {
+  font-size: 11px !important;
+  color: #64748B !important;
+  font-weight: 600 !important;
+  white-space: nowrap !important;
+  letter-spacing: 0.5px !important; /* 增加字边距提升极客轻盈感 */
+}
+
+[data-user-color-scheme="dark"] .wechat-citation-qrcode span {
+  color: #94A3B8 !important;
+}
+
+@media (max-width: 576px) {
+  .wechat-citation-card {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    padding: 15px 18px !important;
+  }
+  .wechat-citation-qrcode {
+    flex-direction: row !important;
+    width: auto !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    border-top: 1px solid rgba(7, 193, 96, 0.1) !important;
+    padding-top: 12px !important;
+    margin-top: 5px !important;
+    gap: 15px !important;
+  }
+  .wechat-citation-qrcode img {
+    width: 130px !important; /* 移动端同样保持舒展的合理尺寸 */
+    height: auto !important;
+    margin-bottom: 0 !important;
+  }
+}
+
+/* ==========================================
+   13. Global Footer WeChat Subscription & Links Section
+   ========================================== */
+.footer-wechat-links-section {
+  margin-top: 25px !important;
+}
+
+.footer-wechat-title {
+  color: #0f172a !important;
+}
+
+[data-user-color-scheme="dark"] .footer-wechat-title {
+  color: #f8fafc !important;
+}
+
+.footer-wechat-desc {
+  color: #475569 !important;
+}
+
+[data-user-color-scheme="dark"] .footer-wechat-desc {
+  color: #94a3b8 !important;
+}
+
+.footer-quick-links {
+  border-left: 2px solid rgba(15, 23, 42, 0.08) !important;
+  padding-left: 20px !important;
+}
+
+[data-user-color-scheme="dark"] .footer-quick-links {
+  border-left: 2px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+.footer-link-highlight {
+  color: #2563eb !important;
+}
+
+[data-user-color-scheme="dark"] .footer-link-highlight {
+  color: #60a5fa !important;
+}
+
+.footer-link-normal {
+  color: #475569 !important;
+}
+
+[data-user-color-scheme="dark"] .footer-link-normal {
+  color: #94a3b8 !important;
+}
+
+.footer-quick-links ul li a {
+  transition: color 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.footer-quick-links ul li a:hover {
+  color: #059b4c !important;
+  text-decoration: none !important;
+}
+
+@media (max-width: 992px) {
+  .footer-wechat-links-section {
+    text-align: center !important;
+  }
+  .footer-wechat-links-section .text-left {
+    text-align: center !important;
+  }
+  .footer-wechat-links-section .d-flex {
+    justify-content: center !important;
+    margin-top: 15px !important;
+  }
+  .footer-quick-links {
+    text-align: left !important;
+    border-left: none !important;
+    padding-left: 0 !important;
+    display: inline-block !important;
+    margin-top: 10px !important;
+  }
+  [data-user-color-scheme="dark"] .footer-quick-links {
+    border-left: none !important;
+  }
+}
+
+/* ==========================================
+   14. Left-Floating WeChat and Quick links Widget (左侧悬浮极客球组件)
+   ========================================== */
+.left-floating-wechat-citation {
+  position: fixed !important;
+  left: 25px !important;
+  bottom: 85px !important; /* 完美避开或者和回到顶部左右对称 */
+  z-index: 9999 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+}
+
+/* 微信图标球，常驻显示 */
+.wechat-float-icon-wrapper {
+  width: 48px !important;
+  height: 48px !important;
+  background-color: #07C160 !important; /* 经典微信绿 */
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-shadow: 0 4px 16px rgba(7, 193, 96, 0.25) !important;
+  cursor: pointer !important;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+[data-user-color-scheme="dark"] .wechat-float-icon-wrapper {
+  background-color: #00B150 !important;
+  box-shadow: 0 4px 16px rgba(0, 177, 80, 0.35) !important;
+}
+
+.wechat-float-icon-wrapper i {
+  color: #ffffff !important;
+  font-size: 24px !important;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* 二维码卡片展开面板，默认隐藏或收纳 */
+.wechat-float-card {
+  position: absolute !important;
+  left: 0 !important;
+  bottom: 60px !important; /* 显示在按钮上方 */
+  width: 250px !important;
+  background-color: rgba(255, 255, 255, 0.9) !important; /* 开启半透明模式以配合毛玻璃效果 */
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border-radius: 12px !important;
+  border: 1px solid rgba(0,0,0,0.06) !important;
+  padding: 16px !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transform: scale(0.9) translateY(10px) !important;
+  transform-origin: left bottom !important;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+[data-user-color-scheme="dark"] .wechat-float-card {
+  background-color: rgba(15, 23, 42, 0.9) !important; /* 暗黑系列夜空降噪色配半透明 */
+  border: 1px solid rgba(255,255,255,0.08) !important;
+}
+
+/* 鼠标滑入隐形桥接器 - 阻断卡片与小绿球之间微空隙导致的 hover 提前中断闪退痛点 */
+.wechat-float-card::after {
+  content: "" !important;
+  position: absolute !important;
+  left: 0 !important;
+  bottom: -20px !important;
+  width: 100% !important;
+  height: 25px !important;
+  background: transparent !important;
+  pointer-events: auto !important;
+}
+
+/* 展开态：当悬停于浮标或者卡片时 */
+.left-floating-wechat-citation:hover .wechat-float-card {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  transform: scale(1) translateY(0) !important;
+}
+
+.left-floating-wechat-citation:hover .wechat-float-icon-wrapper {
+  transform: rotate(360deg) scale(1.05) !important;
+  box-shadow: 0 6px 20px rgba(7, 193, 96, 0.35) !important;
+}
+
+/* 卡片内部元素 */
+.float-card-header {
+  border-bottom: 1px solid rgba(0,0,0,0.05) !important;
+  text-align: left !important;
+}
+
+[data-user-color-scheme="dark"] .float-card-header {
+  border-bottom: 1px solid rgba(255,255,255,0.08) !important;
+}
+
+.float-badge-success {
+  background-color: #07C160 !important;
+  color: #fff !important;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+}
+
+[data-user-color-scheme="dark"] .float-badge-success {
+  background-color: #00B150 !important;
+}
+
+.float-card-title {
+  font-size: 14.5px !important;
+  font-weight: 700 !important;
+  color: #0f172a !important;
+}
+
+[data-user-color-scheme="dark"] .float-card-title {
+  color: #f8fafc !important;
+}
+
+.float-qr-image {
+  width: 100% !important;
+  max-width: 150px !important;
+  height: auto !important;
+  border-radius: 6px !important;
+  border: 1px solid rgba(0,0,0,0.05) !important;
+  display: block !important;
+  margin: 0 auto 10px auto !important;
+}
+
+[data-user-color-scheme="dark"] .float-qr-image {
+  border: 1px solid rgba(255,255,255,0.08) !important;
+}
+
+.float-card-desc {
+  font-size: 11px !important;
+  line-height: 1.5 !important;
+  color: #475569 !important;
+}
+
+[data-user-color-scheme="dark"] .float-card-desc {
+  color: #94a3b8 !important;
+}
+
+.float-visit-btn {
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  background-color: #07C160 !important;
+  border-color: #07C160 !important;
+  padding: 6px 12px !important;
+  border-radius: 6px !important;
+  text-decoration: none !important;
+}
+
+[data-user-color-scheme="dark"] .float-visit-btn {
+  background-color: #00B150 !important;
+  border-color: #00B150 !important;
+}
+
+.float-visit-btn:hover {
+  background-color: #059b4c !important;
+  border-color: #059b4c !important;
+}
+
+.float-card-footer {
+  border-top: 1px solid rgba(0,0,0,0.05) !important;
+  text-align: left !important;
+}
+
+[data-user-color-scheme="dark"] .float-card-footer {
+  border-top: 1px solid rgba(255,255,255,0.08) !important;
+}
+
+.float-footer-label {
+  font-size: 9.5px !important;
+  font-weight: 700 !important;
+  color: #64748b !important;
+  letter-spacing: 0.5px !important;
+}
+
+[data-user-color-scheme="dark"] .float-footer-label {
+  color: #94a3b8 !important;
+}
+
+.float-link-item {
+  font-size: 11.5px !important;
+  font-weight: 600 !important;
+  color: #2563eb !important;
+  text-decoration: none !important;
+  transition: color 0.2s ease !important;
+}
+
+[data-user-color-scheme="dark"] .float-link-item {
+  color: #60a5fa !important;
+}
+
+.float-link-item:hover {
+  color: #059b4c !important;
+  text-decoration: none !important;
+}
+
 
