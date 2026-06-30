@@ -50,6 +50,16 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // -------------------------------------------------------------
+  // 1.5 Mermaid 图表容器修饰
+  // -------------------------------------------------------------
+  document.querySelectorAll('.markdown-body pre > code.mermaid').forEach((codeBlock) => {
+    const preElement = codeBlock.parentElement;
+    if (preElement) {
+      preElement.classList.add('mermaid-pre');
+    }
+  });
+
+  // -------------------------------------------------------------
   // 2. 首页杂志版面 (Editorial Bento Grid) 动力学重排
   // -------------------------------------------------------------
   // 匹配 Hexo Fluid 首页用来包裹卡片的容器 (.col-12.col-md-10.m-auto)

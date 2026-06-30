@@ -133,6 +133,85 @@
   z-index: 10;
 }
 
+.markdown-body pre.mermaid-pre {
+  padding-top: 18px !important;
+  padding-bottom: 18px !important;
+  border-radius: 16px !important;
+  border: 1px solid rgba(59, 130, 246, 0.18) !important;
+  background:
+    linear-gradient(180deg, rgba(15, 23, 42, 0.97) 0%, rgba(17, 24, 39, 0.95) 100%),
+    radial-gradient(circle at top left, rgba(59, 130, 246, 0.10), transparent 38%) !important;
+  box-shadow: 0 14px 36px rgba(2, 6, 23, 0.20) !important;
+  overflow-x: auto !important;
+  isolation: isolate;
+}
+
+.markdown-body pre.mermaid-pre::before {
+  display: none !important;
+}
+
+.markdown-body pre.mermaid-pre::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(148, 163, 184, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.025) 1px, transparent 1px);
+  background-size: 24px 24px;
+  mask-image: linear-gradient(180deg, rgba(255, 255, 255, 0.10), rgba(255, 255, 255, 0.02));
+  z-index: 0;
+}
+
+.markdown-body pre.mermaid-pre code.mermaid {
+  background: transparent !important;
+  padding: 0 !important;
+  position: relative;
+  z-index: 1;
+}
+
+.markdown-body pre.mermaid-pre svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.markdown-body pre.mermaid-pre svg .flowchart-link,
+.markdown-body pre.mermaid-pre svg .edgePath .path,
+.markdown-body pre.mermaid-pre svg path.path {
+  stroke: #93a4bc !important;
+  stroke-width: 2px !important;
+}
+
+.markdown-body pre.mermaid-pre svg .arrowheadPath,
+.markdown-body pre.mermaid-pre svg marker path {
+  fill: #93a4bc !important;
+  stroke: #93a4bc !important;
+}
+
+.markdown-body pre.mermaid-pre svg .edgeLabel rect {
+  fill: rgba(15, 23, 42, 0.88) !important;
+  stroke: rgba(96, 165, 250, 0.18) !important;
+}
+
+.markdown-body pre.mermaid-pre svg .edgeLabel text,
+.markdown-body pre.mermaid-pre svg .label text,
+.markdown-body pre.mermaid-pre svg .cluster-label text {
+  fill: #dbe7f5 !important;
+}
+
+[data-user-color-scheme="dark"] .markdown-body pre.mermaid-pre {
+  border: 1px solid rgba(96, 165, 250, 0.26) !important;
+  background:
+    linear-gradient(180deg, rgba(8, 15, 28, 0.98) 0%, rgba(15, 23, 42, 0.95) 100%),
+    radial-gradient(circle at top left, rgba(56, 189, 248, 0.12), transparent 36%) !important;
+  box-shadow: 0 16px 40px rgba(2, 6, 23, 0.52) !important;
+}
+
 /* 5. 侧边目录 (TOC) 优雅高亮设计 */
 .tocbot-active-link {
   color: var(--color-primary) !important;
